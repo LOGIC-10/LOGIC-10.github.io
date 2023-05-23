@@ -1,13 +1,13 @@
 # main links links
 main:
   - title: "Publications"
-    url: ../_pages/publications.md
+    url: /publications/
 
-  # - title: "Talks"
-  #   url: ../_pages/talks.html
+  - title: "Talks"
+    url: /talks/    
 
-  # - title: "Teaching"
-  #   url: ../_pages/teaching.html
+  - title: "Teaching"
+    url: /teaching/    
     
   # - title: "Portfolio"
   #   url: /portfolio/
