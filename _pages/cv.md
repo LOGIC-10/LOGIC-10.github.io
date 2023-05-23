@@ -9,13 +9,24 @@ redirect_from:
 
 {% include base_path %}
 
-# Education
-------
-- Hohai University, School of Computer Science and Information | China | 2019.09 – 2023.06
-  - Main Courses: Artificial Intelligence, Operating Systems, Data Structures, Algorithm Design, Database Systems.
+## Education
 
-- University of Delaware, Department of Computer and Information Sciences | USA | 2022.07 - 2022.11
-  - Summer Research intern | Advisor: Professor Weisong Shi
+### Hohai University, School of Computer Science and Information ｜ **China | 2019.09 – 2023.06**
+
+Main Courses: 
+- Artificial Intelligence
+- Operating Systems
+- Data Structures
+- Algorithm Design
+- Database Systems.
+
+---
+
+### University of Delaware, Department of Computer and Information Sciences ｜ **USA | 2022.07 - 2022.11**
+
+Summer Research intern
+Advisor: Professor Weisong Shi
+
 
 # Work Experience
 ------
