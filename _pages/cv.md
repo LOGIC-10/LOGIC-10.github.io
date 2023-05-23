@@ -11,7 +11,8 @@ redirect_from:
 
 ## Education
 
-### Hohai University, School of Computer Science and Information ｜ **China | 2019.09 – 2023.06**
+### Hohai University, School of Computer Science and Information &vert; **China | 2019.09 – 2023.06**
+
 
 Main Courses: 
 - Artificial Intelligence
