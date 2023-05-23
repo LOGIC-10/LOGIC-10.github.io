@@ -3,11 +3,11 @@ main:
   - title: "Publications"
     url: ../_pages/publications.md
 
-  - title: "Talks"
-    url: ../_pages/talks.html
+  # - title: "Talks"
+  #   url: ../_pages/talks.html
 
-  - title: "Teaching"
-    url: ../_pages/teaching.html
+  # - title: "Teaching"
+  #   url: ../_pages/teaching.html
     
   # - title: "Portfolio"
   #   url: /portfolio/
@@ -16,7 +16,7 @@ main:
   #   url: /year-archive/
     
   - title: "CV"
-    url: https://logic-10.github.io/_pages/cv.md
+    url: /cv/
     
   # - title: "Guide"
   #   url: /markdown/
