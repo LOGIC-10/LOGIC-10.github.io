@@ -16,7 +16,7 @@ main:
     url: /year-archive/
     
   - title: "CV"
-    url: ../_pages/cv.md
+    url: https://logic-10.github.io/_pages/cv.md
     
   - title: "Guide"
     url: /markdown/
