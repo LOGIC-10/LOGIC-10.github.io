@@ -17,8 +17,8 @@ Main Courses: Artificial Intelligence, Operating Systems, Data Structure, Algori
 
 ## University of Delaware, Department of Computer and Information Sciences **| USA | 2022.07 - 2022.11**
 
-Summer Research intern  
-Advisor: Professor **[Weisong Shi](http://weisongshi.org)**  
+**Summer Research intern**  
+**Advisor: Professor [Weisong Shi](http://weisongshi.org)**  
 ---
 
 # Work Experience
@@ -36,22 +36,22 @@ Advisor: Professor **[Weisong Shi](http://weisongshi.org)**
 ------
 # Research Experience
 
-## Self-Driving Task Scheduling Framework based on Docker and Edge Computing / 2022.07 - 2022.11
-  - Advisor: Professor Weisong Shi | Chair of Computer Science Department | University of Delaware | USA
+## Self-Driving Task Scheduling Framework based on Docker and Edge Computing | 2022.07 - 2022.11  
+  **Advisor: Professor Weisong Shi | Chair of Computer Science Department | University of Delaware | USA**
   - Devised a task scheduling framework to solve the autonomous driving task scheduling problem on software-defined vehicles, encapsulating four algorithms and deployed on docker to create an experimental environment.
   - Combined reinforcement learning with a dual-timescale mechanism, using actor-critic algorithm to automatically learn scheduling strategies for driving tasks.
   - Proposed a dynamic change formula based on image similarity for large time scale, optimizing orchestrating overhead assembling a matrix-like service relevance coefficient update mechanism to accelerate model learning--these innovations helped improve the framework throughput rate by 12.04% and stability (using the variance of the throughput rate) by 3.56%.
   - Designed a global feature-fusion method to generate the state of reinforcement learning, and, eventually, the throughput rate was increased from 50% to 79% ~ 97%, and the stability was increased by 48.68%.
 
-## Image Style Transfer based on VGG19 Pre-trained Model | 2022.03 - 2022.05
-  - Advisor: Dr. Evelyn | Stanford University | USA
+## Image Style Transfer based on VGG19 Pre-trained Model | 2022.03 - 2022.05  
+  **Advisor: Dr. Evelyn | Stanford University | USA**
   - Built a multilayer convolutional neural network using VGG19 Pre-trained Model and yielded 763 image style-transfer pairs of different sizes and themes in order to imitate human painting styles.
   - Discovered the correspondence between image structure pattern and style similarity, proposed an improved method of fusing object recognition and style transfer with clearer line texture and better color block separation.
 ------
 
 # Projects
-## Cooperative Control System for UAV Swarms based on Cloud-Side Collaboration | 2021.07 - 2021.09
-  - Advisor: Yingchi Mao | Vice Dean of School of Computer Science | Hohai University | China
+## Cooperative Control System for UAV Swarms based on Cloud-Side Collaboration | 2021.07 - 2021.09   
+  **Advisor: Yingchi Mao | Vice Dean of School of Computer Science | Hohai University | China**
   - Implemented automate drone tasks including waypoint planning, timed photo-taking in UAV control system.
   - Adjusted the layout and structure of the mobile control system, optimized the UI interface, and implemented RTMP live streaming push to the edge server.
 
