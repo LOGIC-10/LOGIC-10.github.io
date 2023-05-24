@@ -18,7 +18,7 @@ Main Courses: Artificial Intelligence, Operating Systems, Data Structure, Algori
 ### University of Delaware, Department of Computer and Information Sciences -- **USA | 2022.07 - 2022.11**
 
 Summer Research intern
-Advisor: Professor Weisong Shi
+Advisor: Professor **[Weisong Shi](http://weisongshi.org)**
 ---
 
 # Work Experience
