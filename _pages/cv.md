@@ -11,11 +11,11 @@ redirect_from:
 
 # Education
 
-## Hohai University, School of Computer Science and Information -- **China | 2019.09 – 2023.06**
+## Hohai University, School of Computer Science and Information **| China | 2019.09 – 2023.06**
 
 Main Courses: Artificial Intelligence, Operating Systems, Data Structure, Algorithm Design, Database Systems.
 
-## University of Delaware, Department of Computer and Information Sciences -- **USA | 2022.07 - 2022.11**
+## University of Delaware, Department of Computer and Information Sciences **| USA | 2022.07 - 2022.11**
 
 Summer Research intern
 Advisor: Professor **[Weisong Shi](http://weisongshi.org)**
@@ -23,14 +23,13 @@ Advisor: Professor **[Weisong Shi](http://weisongshi.org)**
 
 # Work Experience
 
-## Intelligent Stethoscope for Heart Sound Recognition / Founder / FinzHealth IoT Technology / 2021.05 - Present
+## Intelligent Stethoscope for Heart Sound Recognition | Founder | FinzHealth IoT Technology | 2021.05 - Present
   - Invented a wireless intelligent stethoscope during the COVID-19 pandemic and founded FinzHealth IoT Technology Co., LTD; established the first Chinese database for heart sounds from patients with corona virus.
   - Obtained three patents by designing the hardware structure of the product, raised a million yuan in financing and reached hundreds of test users with our minimum viable product.
   - Filtered the data to reduce high-frequency noise, downsampled to increase the sensing field and normalized the audio signal to unify the audio scale.
   - Extracted features by using spectral analysis and trained neural network models to classify four heart maladies, achieving a 97% accuracy on the test dataset.
 
-## Research and application of Large Language Models in financial field / Internship
-  - China International Capital Corporation Limited (CICC) | AI Group | 2022.07 - Present
+## Research and application of Large Language Models in financial field | Internship | China International Capital Corporation Limited (CICC) | AI Group | 2022.07 - Present
   - Investigated the application of large language models and ran some open-source models such as CPM-Ant, GPT, and flan-T5 to evaluate their effects in text generation and question answering.
   - Contributed a dataset called PsQScore by crawling data from Bing.com, perplexity.ai and ChatGPT, combining with washed data from the DuReader and T2Ranking dataset.
   - Fintuned a model with the capability of generating search results with citations using the self-constructed data. Then I combined it with the company's internal database and use it in the search and investment research report generation functions in financial field.
