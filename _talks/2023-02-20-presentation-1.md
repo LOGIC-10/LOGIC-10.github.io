@@ -2,7 +2,7 @@
 title: "Principle analysis of chatGPT and the application of large models in the financial industry"
 collection: talks
 type: "Presentation"
-permalink: /talks/2012-03-01-talk-1
+permalink: /talks/2023-02-20-presentation-1
 venue: "China International Capital Corporation (CICC)"
 date: 2023-02-20
 location: "Beijing, China"
