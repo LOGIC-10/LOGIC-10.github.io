@@ -8,14 +8,14 @@ redirect_from:
 ---
 
 {% include base_path %}
-
+---
 # Education
 ### Hohai University, School of Computer Science and Information **| China | 2019.09 – 2023.06**
 Main Courses: Artificial Intelligence, Operating Systems, Data Structure, Algorithm Design, Database Systems.
 ### University of Delaware, Department of Computer and Information Sciences | USA | 2022.07 - 2022.11
 Summer Research intern  
 Advisor: **Professor [Weisong Shi](http://weisongshi.org)**  
----
+-------
 # Work Experience
 ### Intelligent Stethoscope for Heart Sound Recognition | Founder | FinzHealth IoT Technology | 2021.05 - Present  
   - Invented a wireless intelligent stethoscope during the COVID-19 pandemic and founded FinzHealth IoT Technology Co., LTD; established the first Chinese database for heart sounds from patients with corona virus.
