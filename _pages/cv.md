@@ -23,14 +23,14 @@ Advisor: **Professor [Weisong Shi](http://weisongshi.org)**
   - Filtered the data to reduce high-frequency noise, downsampled to increase the sensing field and normalized the audio signal to unify the audio scale.
   - Extracted features by using spectral analysis and trained neural network models to classify four heart maladies, achieving a 97% accuracy on the test dataset.  
 
-### Research and application of LLMs in financial field | Internship | China International Capital Corporation Limited (CICC) | AI Group | 2022.07 - Present
+### Research and application of LLMs in financial field | Internship | [China International Capital Corporation Limited (CICC)](https://www.cicc.com) | AI Group | 2022.07 - Present
   - Investigated the application of large language models and ran some open-source models such as CPM-Ant, GPT, and flan-T5 to evaluate their effects in text generation and question answering.
   - Contributed a dataset called PsQScore by crawling data from Bing.com, perplexity.ai and ChatGPT, combining with washed data from the DuReader and T2Ranking dataset.  
   - Fintuned a model with the capability of generating search results with citations using the self-constructed data. Then I combined it with the company's internal database and use it in the search and investment research report generation functions in financial field.
 
 # Research Experience
 ### Self-Driving Task Scheduling Framework based on Docker and Edge Computing | 2022.07 - 2022.11  
-  **Advisor: Professor Weisong Shi | Chair of Computer Science Department | University of Delaware | USA**
+  **Advisor: Professor [Weisong Shi](http://weisongshi.org) | Chair of Computer Science Department | University of Delaware | USA**
   - Devised a task scheduling framework to solve the autonomous driving task scheduling problem on software-defined vehicles, encapsulating four algorithms and deployed on docker to create an experimental environment.
   - Combined reinforcement learning with a dual-timescale mechanism, using actor-critic algorithm to automatically learn scheduling strategies for driving tasks.
   - Proposed a dynamic change formula based on image similarity for large time scale, optimizing orchestrating overhead assembling a matrix-like service relevance coefficient update mechanism to accelerate model learning--these innovations helped improve the framework throughput rate by 12.04% and stability (using the variance of the throughput rate) by 3.56%.
@@ -56,9 +56,11 @@ Advisor: **Professor [Weisong Shi](http://weisongshi.org)**
   - Second inventor of three patents
   - Excellent completion of national innovation and entrepreneurship training project (first place)
   - First prize at the National University Art Exhibition in 2021  
+
 **Provincial Level:**
   - Third Prize at the Jiangsu "Internet+" Innovation and Entrepreneurship Competition
-  - Third Prize at the "Winning in Nanjing" Innovation and Entrepreneurship Competition  
+  - Third Prize at the "Winning in Nanjing" Innovation and Entrepreneurship Competition    
+
 **College Level:**
   - 2021 Science and Technology Innovation Scholarship (5%)
   - Academic Excellence Scholarship (5%)
@@ -67,12 +69,13 @@ Advisor: **Professor [Weisong Shi](http://weisongshi.org)**
 
 # ACTIVITIES
 ### Documentary Director | Producer | 2020.02 - 2020.08
-  - Independently produced the documentary film "Honglin Cuo". It was shown by CCTV-10, with a total viewership of more than 77 million.
+  - Independently produced the documentary film **["Honglin Cuo"](https://www.bilibili.com/video/BV1gT4y177oL/?spm_id_from=333.337.search-card.all.click&vd_source=f992594be2927c7f40bec1ab727fb47c)**. It was shown by **CCTV-10**, with a total viewership of more than 77 million.
   - Filmed a documentary of Fujian medical team's fight against COVID-19 called "The March", which was reflected by numerous official media outlets, with more than 1 million pageviews.
   - Received a letter of thanks from the Affiliated Union Hospital of Fujian Medical University, and the work was included in the Digital Museum of Huazhong University of Science and Technology.
 
 # SKILLS
-**Programming Languages**: C, Java, Python, JavaScript, HTML, SQL.   
+**Programming Languages**: C, Java, Python, JavaScript, HTML, SQL.  
+ 
 **Technologies**: PyTorch, TensorFlow, Oracle Database, Spring Boot, Docker, Maven, GaussDB.
 
 <!-- 
