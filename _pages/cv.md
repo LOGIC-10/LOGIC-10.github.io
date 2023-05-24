@@ -17,13 +17,13 @@ Main Courses: Artificial Intelligence, Operating Systems, Data Structure, Algori
 
 ## University of Delaware, Department of Computer and Information Sciences **| USA | 2022.07 - 2022.11**
 
-Summer Research intern
-Advisor: Professor **[Weisong Shi](http://weisongshi.org)**
+Summer Research intern  
+Advisor: Professor **[Weisong Shi](http://weisongshi.org)**  
 ---
 
 # Work Experience
 
-## Intelligent Stethoscope for Heart Sound Recognition | Founder | FinzHealth IoT Technology | 2021.05 - Present
+## Intelligent Stethoscope for Heart Sound Recognition | Founder | FinzHealth IoT Technology | 2021.05 - Present  
   - Invented a wireless intelligent stethoscope during the COVID-19 pandemic and founded FinzHealth IoT Technology Co., LTD; established the first Chinese database for heart sounds from patients with corona virus.
   - Obtained three patents by designing the hardware structure of the product, raised a million yuan in financing and reached hundreds of test users with our minimum viable product.
   - Filtered the data to reduce high-frequency noise, downsampled to increase the sensing field and normalized the audio signal to unify the audio scale.
