@@ -15,13 +15,14 @@ Main Courses: Artificial Intelligence, Operating Systems, Data Structure, Algori
 ### University of Delaware, Department of Computer and Information Sciences | USA | 2022.07 - 2022.11
 Summer Research intern  
 Advisor: **Professor [Weisong Shi](http://weisongshi.org)**  
----
+
 # Work Experience
 ### Intelligent Stethoscope for Heart Sound Recognition | Founder | FinzHealth IoT Technology | 2021.05 - Present  
   - Invented a wireless intelligent stethoscope during the COVID-19 pandemic and founded FinzHealth IoT Technology Co., LTD; established the first Chinese database for heart sounds from patients with corona virus.
   - Obtained three patents by designing the hardware structure of the product, raised a million yuan in financing and reached hundreds of test users with our minimum viable product.
   - Filtered the data to reduce high-frequency noise, downsampled to increase the sensing field and normalized the audio signal to unify the audio scale.
   - Extracted features by using spectral analysis and trained neural network models to classify four heart maladies, achieving a 97% accuracy on the test dataset.  
+
 ### Research and application of LLMs in financial field | Internship | China International Capital Corporation Limited (CICC) | AI Group | 2022.07 - Present
   - Investigated the application of large language models and ran some open-source models such as CPM-Ant, GPT, and flan-T5 to evaluate their effects in text generation and question answering.
   - Contributed a dataset called PsQScore by crawling data from Bing.com, perplexity.ai and ChatGPT, combining with washed data from the DuReader and T2Ranking dataset.  
@@ -33,7 +34,8 @@ Advisor: **Professor [Weisong Shi](http://weisongshi.org)**
   - Devised a task scheduling framework to solve the autonomous driving task scheduling problem on software-defined vehicles, encapsulating four algorithms and deployed on docker to create an experimental environment.
   - Combined reinforcement learning with a dual-timescale mechanism, using actor-critic algorithm to automatically learn scheduling strategies for driving tasks.
   - Proposed a dynamic change formula based on image similarity for large time scale, optimizing orchestrating overhead assembling a matrix-like service relevance coefficient update mechanism to accelerate model learning--these innovations helped improve the framework throughput rate by 12.04% and stability (using the variance of the throughput rate) by 3.56%.
-  - Designed a global feature-fusion method to generate the state of reinforcement learning, and, eventually, the throughput rate was increased from 50% to 79% ~ 97%, and the stability was increased by 48.68%.
+  - Designed a global feature-fusion method to generate the state of reinforcement learning, and, eventually, the throughput rate was increased from 50% to 79% ~ 97%, and the stability was increased by 48.68%.  
+
 ### Image Style Transfer based on VGG19 Pre-trained Model | 2022.03 - 2022.05  
   **Advisor: Dr. Evelyn | Stanford University | USA**
   - Built a multilayer convolutional neural network using VGG19 Pre-trained Model and yielded 763 image style-transfer pairs of different sizes and themes in order to imitate human painting styles.
@@ -43,19 +45,20 @@ Advisor: **Professor [Weisong Shi](http://weisongshi.org)**
 ### Cooperative Control System for UAV Swarms based on Cloud-Side Collaboration | 2021.07 - 2021.09   
   **Advisor: Yingchi Mao | Vice Dean of School of Computer Science | Hohai University | China**
   - Implemented automate drone tasks including waypoint planning, timed photo-taking in UAV control system.
-  - Adjusted the layout and structure of the mobile control system, optimized the UI interface, and implemented RTMP live streaming push to the edge server.
+  - Adjusted the layout and structure of the mobile control system, optimized the UI interface, and implemented RTMP live streaming push to the edge server.  
+
 ### Big Data Storage and Computing Separation System based on HUAWEI CLOUD | 2021.12 - 2022.02
-  - Built a Hadoop cluster, configured environment variables and initialized the namenodes.
+  - Built a Hadoop cluster, configured environment variables and initialized the namenodes.  
   - Stored the collected YouTube videos into the Hadoop Distributed File System of the Hadoop cluster, and used the MapReduce service to implement querying and sorting functions such as the number of plays and comments.
----
+
 # AWARDS
 **National Level:**
   - Second inventor of three patents
   - Excellent completion of national innovation and entrepreneurship training project (first place)
-  - First prize at the National University Art Exhibition in 2021
+  - First prize at the National University Art Exhibition in 2021  
 **Provincial Level:**
   - Third Prize at the Jiangsu "Internet+" Innovation and Entrepreneurship Competition
-  - Third Prize at the "Winning in Nanjing" Innovation and Entrepreneurship Competition
+  - Third Prize at the "Winning in Nanjing" Innovation and Entrepreneurship Competition  
 **College Level:**
   - 2021 Science and Technology Innovation Scholarship (5%)
   - Academic Excellence Scholarship (5%)
