@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Qinyu Luo"
+title                    : "Homepage"
 title_separator          : "-"
 name                     : &name "Qinyu Luo"
 description              : &description "personal description"
