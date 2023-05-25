@@ -23,7 +23,8 @@ This minimum viable product has ability to daignose and record patient's informa
 
 Also, there are many amazing functions I will develop in the future, like auto heart rate detection. 
 ![waveform3](../images/product/waveform 3.png)
-What's more, I plan to combine LLM techs with multimodality to establish a complete intelligent mechanism to assist doctors.*** Currently, I am looking for a team consists of self-motivative members. If you're experienced or interested in this field, I would be very glad to discuss its future and cooperate with you.***
+
+What's more, I plan to combine LLM techs with multimodality to establish a complete intelligent mechanism to assist doctors. **Currently, I am looking for a team consists of self-motivative members. If you're experienced or interested in this field, I would be very glad to discuss its future and cooperate with you.**
 
 
 
