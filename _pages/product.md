@@ -8,7 +8,7 @@ author_profile: true
 
 # Intelligent Stethoscope
 
-My career aspiration revolves around utilizing technology to enhance the lives of individuals residing in remote areas. When the COVID-19 pandemic emerged in 2020, I recognized an opportunity to employ my coding expertise in a meaningful way. As my father, a dedicated doctor and esteemed medical professor, battled the pandemic on the front lines, I observed the challenges faced by healthcare professionals who couldn't utilize conventional stethoscopes while donning protective suits. This realization sparked a question within me: "Why not create a wireless stethoscope embedded with AI algorithms specifically designed for telemedicine applications?"
+My career aspiration revolves around utilizing technology to enhance the lives of individuals residing in remote areas and foster a future where remote healthcare becomes a convenient mainstream trend, reaching every household. When the COVID-19 pandemic emerged in 2020, I recognized an opportunity to employ my coding expertise in a meaningful way. As my father, a dedicated doctor and esteemed medical professor, battled the pandemic on the front lines, I observed the challenges faced by healthcare professionals who couldn't utilize conventional stethoscopes while donning protective suits. This realization sparked a question within me: "Why not create a wireless stethoscope embedded with AI algorithms specifically designed for telemedicine applications?"
 
 So I invented this intelligent Stethoscope:
 ![Intelligent Stethoscope 1](../images/product/stethoscope1.jpg)
