@@ -1,5 +1,5 @@
 ---
-title: "Principle analysis of chatGPT and the application of large models in the financial industry"
+title: "Principle analysis of chatGPT and the application of large language models(LLMs) in the financial industry"
 collection: talks
 type: "Presentation"
 permalink: /talks/2023-02-20-presentation-1
