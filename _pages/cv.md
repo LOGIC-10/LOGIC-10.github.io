@@ -21,7 +21,7 @@ Advisor: **Professor [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/)**
 
 # Research Experience
 ### [RepoAgent](https://arxiv.org/abs/2402.16667): An Open-source Framework for Repository-level Documentation Generation | 2023.11 - 2024.02
-**Advisor: Professor [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/)|Tsinghua University|THUNLP|China**
+**Advisor: Professor [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/) | Tsinghua University | THUNLP | China**
 
   - Developed the entire framework as the lead author, enabling high-quality code documentation generation for
   repositories through LLMs. This framework automatically updates and maintains code documentation during the
