@@ -1,7 +1,7 @@
 ---
 layout: archive
-# title: "Publications"
+title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-* Nothing
+Please refer to my [Google Scholar](https://scholar.google.com/citations?user=ipMWfycAAAAJ&hl=en) for latest information.
