@@ -10,7 +10,7 @@ redirect_from:
 
 Hi~ I am **Qinyu Luo**, Welcome!
 
-I was born in 2001 and I am currently a member of **[THUNLP](http://nlp.csai.tsinghua.edu.cn)** at **[Tsinghua University](https://www.tsinghua.edu.cn)**. And I am also pursuing my master's degree in Computer Science track and Engineering Management at **[Johns Hopkins University](https://www.jhu.edu)**. In the future, I will focus my research interest on the combination of **Healthcare, Large Language Models and Reinforcement Learning**. To get a comprehensive overview of my research experience and project history, please refer to the **[Resume](./cv.md)** section.
+I was born in 2001 and I am currently a member of **[THUNLP](http://nlp.csai.tsinghua.edu.cn)** at **[Tsinghua University](https://www.tsinghua.edu.cn)**. And I am also pursuing my master's degree in Computer Science track and Engineering Management at **[Johns Hopkins University](https://www.jhu.edu)**. My research interest focus on **LLM-driven Agents**; **Multi-Agent System**; **Agentic Tool Learning**; **Multimodality Reasoning**. To get a comprehensive overview of my research experience and project history, please refer to the **[Resume](./cv.md)** section.
 
 Aside from my academic pursuits, I possess a deep passion for sharing my practical experience and perspectives. I have had several opportunities to deliver lectures and speeches in public settings (See **[Talks](./talks.html)**). Moving forward, I am eager to expand my reach and plan to create tutorials on open-source platforms. I sincerely invite you to keep up with my updates and discuss with me in detail. Please refer to my [Google Scholar](https://scholar.google.com/citations?user=ipMWfycAAAAJ&hl=en) for latest publications information.
 
