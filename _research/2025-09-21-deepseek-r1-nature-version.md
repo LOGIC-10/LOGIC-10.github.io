@@ -19,7 +19,7 @@ I went through the training process from start to finish, and the most intuitive
 My understanding process started with figuring out what Zero learned, then identifying "what improvements were added at each stage", and finally understanding how R1 was ultimately achieved. In general, during the Zero stage, with pure rule-based rewards and signals that only focused on final correctness, the model naturally developed behaviors like "reflection/verification/multi-path attempts" along with longer output lengths for code and math tasks. However, Zero had issues with readability and language consistency, and was not friendly to general instruction scenarios. Therefore, Dev1 used a small amount of Zero's data, which was polished and rewritten using DeepSeek V3 to create "long CoT cold start" and instruction data, thereby improving readability and instruction-following ability. But this also led to a decline in scores for some strict reasoning tasks. Dev2 then used reasoning-focused RL again to boost performance in math and coding. What’s noteworthy about Dev3 is that it abandoned all previously trained model checkpoints (CKPTs) and restarted with the most basic base model, DeepSeek-V3, to perform SFT on both reasoning and non-reasoning data simultaneously, which further improved performance in general writing and engineering tasks. Finally, R1 underwent a round of "hybrid rewards + preference/safety" tuning to wrap up the process. Scores for code and math tasks only saw minor adjustments, but metrics related to "user preference/comprehensive writing" (such as AlpacaEval and Arena-Hard) showed the most significant increases. The narrative of "stage – highlight – trade-off" is very clear in the Nature version. My reading experience was that each stage addressed the problems left by the previous one, and the counter-mainstream, counter-intuitive method of using intermediate models only for self-distillation (which makes one feel that SFT alone can play a significant role) was quite striking.
 
 <figure>
-  <img src="../images/research/deepseek-r1-nature-version/deepseek-r1-multistage-pipeline.png" alt="DeepSeek-R1 multistage pipeline" width="720" loading="lazy">
+  <img src="https://logic-10.github.io/images/research/deepseek-r1-nature-version/deepseek-r1-multistage-pipeline.png" alt="DeepSeek-R1 multistage pipeline" width="720" loading="lazy">
   <figcaption>Fig. 2. Multistage pipeline from Zero → Dev1 → Dev2 → Dev3 → R1 (source: Nature).</figcaption>
 </figure>
 
@@ -30,7 +30,7 @@ When analyzing the performance scores on reasoning datasets, I found that the Ze
 Looking at the two math datasets MATH and CNMO 2024, the Zero version still had the highest scores. Subsequent versions saw a decline in scores due to the addition of SFT or adjustments to RL objectives. This made me think: perhaps math tasks do not require natural language assistance. The Zero version was not disturbed by natural language-related objectives (such as format requirements and instruction following), allowing it to focus more on mathematical abilities, hence its better performance. In contrast, later versions had to balance the need to "produce human-like language", which distracted them from mathematical reasoning and led to impaired performance. I even think that if we train math models using pure symbols instead of natural language, we might achieve better results.
 
 <figure>
-  <img src="../images/research/deepseek-r1-nature-version/deepseek-r1-stage-results-table.png" alt="Experimental results by stage" width="760" loading="lazy">
+  <img src="https://logic-10.github.io/images/research/deepseek-r1-nature-version/deepseek-r1-stage-results-table.png" alt="Experimental results by stage" width="760" loading="lazy">
   <figcaption>Table 2. Experimental results across stages (English/Code/Math/Chinese).</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ Looking at the two math datasets MATH and CNMO 2024, the Zero version still had 
 **Doubts about the rationality and authenticity of charts:** Some charts seem problematic. For example, the end of the red line in the left graph of the AIME training curve is flat. I speculate that this part was artificially extended to "align with 10,000 steps" with other curves, rather than being a real training result (the real training process might still be fluctuating or rising slowly). This is because the original arXiv version only covered up to 8,500 steps. Moreover, the basis for this adjustment is not explained, and there is a lack of data support, which affects the credibility of the charts.
 
 <figure>
-  <img src="../images/research/deepseek-r1-nature-version/deepseek-r1-zero-aime-accuracy.png" alt="R1-Zero AIME accuracy during training" width="600" loading="lazy">
+  <img src="https://logic-10.github.io/images/research/deepseek-r1-nature-version/deepseek-r1-zero-aime-accuracy.png" alt="R1-Zero AIME accuracy during training" width="600" loading="lazy">
   <figcaption>Fig. 1. AIME accuracy vs. steps (pass@1 vs. cons@16) for R1‑Zero.</figcaption>
 </figure>
 
