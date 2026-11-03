@@ -1,2 +1,9 @@
-_site/
-
+node_modules/
+dist/
+.astro/
+__pycache__/
+*.pyc
+.DS_Store
+public/pdfjs/
+preview-*.png
+work/

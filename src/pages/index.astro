@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PublicationLibrary from '../components/PublicationLibrary.astro';
+import { displayPublications as allWork } from '../data/research';
+import { profile } from '../data/profile';
+---
+<Layout title="Qinyu Luo" active="home" className="home-page">
+  <div class="container">
+    <section class="home-hero" aria-labelledby="hero-name">
+      <div class="hero-introduction">
+        <p class="eyebrow"><span class="hero-spark" aria-hidden="true">✳</span> AI RESEARCHER · {profile.affiliation.toUpperCase()}</p>
+        <h1 class="hero-name" id="hero-name">Qinyu <em>Luo.</em></h1>
+        <p class="hero-question">How can agents become<br /><em>thoughtful collaborators?</em></p>
+        <p class="hero-description">I’m currently at <a href={profile.affiliationUrl} target="_blank" rel="noopener noreferrer">{profile.affiliation}</a>. I study language agents that reason, use tools, and work together. My interests span multi-agent systems, agentic tool learning, and multimodal reasoning—with an eye toward systems that are useful beyond the benchmark.</p>
+        <div class="hero-actions"><a class="button button-primary" href="/research/">Explore my research <span aria-hidden="true">↗</span></a><a class="text-link" href={profile.scholar} target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <figure class="hero-profile"><div class="portrait-mat"><img src={profile.portrait} width="1537" height="1537" alt="Qinyu Luo by the sea" fetchpriority="high" /></div><figcaption><span>QINYU LUO</span><span>RESEARCHER. BUILDER. EXPLORER.</span></figcaption></figure>
+    </section>
+    <div class="background-strip"><span>ACADEMIC BACKGROUND</span><div class="background-item">THUNLP, Tsinghua University<span>RESEARCH EXPERIENCE</span></div><div class="background-item">Johns Hopkins University<span>GRADUATE STUDIES</span></div><a href="/about/">A little more about me <span aria-hidden="true">↗</span></a></div>
+
+    <section class="home-section all-publications" aria-labelledby="all-research-title">
+      <div class="section-header"><div><p class="eyebrow"><span class="section-index">01 /</span> PUBLICATIONS & REPORTS</p><h2 id="all-research-title">Research, <em>in the open.</em></h2></div><a class="text-link" href="/research/">Search & filter <span aria-hidden="true">↗</span></a></div>
+      <p class="publication-list-intro">The complete collection: {allWork.length} works across agent systems, model learning, and mathematics. Key figures from the papers accompany each work.</p>
+      <PublicationLibrary papers={allWork} id="home-publications" variant="row" headingLevel="h3" />
+    </section>
+
+    <section class="home-section sharing-section" aria-label="Writing and talks">
+      <div><div class="sharing-heading"><p class="eyebrow"><span class="section-index">02 /</span> READING & THINKING</p><a class="text-link" href="/notes/">All notes ↗</a></div><a class="home-note" href="/notes/deepseek-r1/"><span class="note-date">SEPTEMBER 21, 2025 · RESEARCH NOTE</span><h3>DeepSeek-R1.<br /><em>A closer reading.</em></h3><p>On staged training, the interplay of SFT and RL, and the questions a paper leaves behind.</p><span class="text-link">Read the note <span aria-hidden="true">↗</span></span></a></div>
+      <div><div class="sharing-heading"><p class="eyebrow">SELECTED TALKS</p><a class="text-link" href="/notes/#talks">All talks ↗</a></div><a class="home-talk" href="/notes/#repoagent-slides"><span class="talk-year">2024</span><span><strong>RepoAgent at EMNLP</strong><small>System Demonstration · Slides</small></span><span aria-hidden="true">→</span></a><a class="home-talk" href="/notes/#talks"><span class="talk-year">2023</span><span><strong>Introduction to XAgent and RepoAgent</strong><small>MiraclePlus</small></span><span aria-hidden="true">↗</span></a><a class="home-talk" href="/notes/#talks"><span class="talk-year">2023</span><span><strong>Large language models in finance</strong><small>China International Capital Corporation</small></span><span aria-hidden="true">↗</span></a></div>
+    </section>
+  </div>
+</Layout>

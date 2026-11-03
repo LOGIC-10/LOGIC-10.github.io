@@ -1,0 +1,49 @@
+---
+interface Props { kind: 'repo' | 'escape' | 'proactive' | 'context'; compact?: boolean; }
+const { kind, compact = false } = Astro.props;
+const titles = {
+  repo: 'Concept sketch: a repository, language agents, and living documentation',
+  escape: 'Concept sketch: exploring a room, trying tools, and finding a way out',
+  proactive: 'Concept sketch: observe context, anticipate a task, and offer assistance',
+  context: 'Concept sketch: related information separated by a long context',
+};
+---
+<div class:list={['diagram', `diagram-${kind}`, { 'diagram-compact': compact }]}>
+  <svg viewBox="0 0 520 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={titles[kind]}>
+    {kind === 'repo' && <>
+      <path class="sketch-grid" d="M0 50H520M0 100H520M0 150H520M0 200H520M0 250H520M60 0V300M160 0V300M260 0V300M360 0V300M460 0V300" />
+      <rect class="sketch-card" x="38" y="84" width="115" height="132" rx="6"/>
+      <path class="sketch-stroke" d="M58 113h28l8 9h36M59 141h10m10 0h42m-52 0v24m0-8h12m9 0h28m-49 7v18m0-2h12m9 0h20" />
+      <path class="sketch-dashed" d="M153 150h52m105 0h51M153 150l51-67h45m-96 67 51 67h45" />
+      <circle class="sketch-node" cx="263" cy="83" r="23"/><circle class="sketch-node-emphasis" cx="263" cy="150" r="29"/><circle class="sketch-node" cx="263" cy="217" r="23"/>
+      <path class="sketch-stroke" d="m253 83 7 7 13-14m-20 141 7 7 13-14"/><path class="sketch-white" d="m250 150 9 9 18-18"/>
+      <path class="sketch-arrow" d="m352 144 9 6-9 6"/>
+      <rect class="sketch-card" x="365" y="84" width="115" height="132" rx="6"/>
+      <path class="sketch-stroke" d="M386 110h56m-56 14h73m-73 14h63m-63 25h73m-73 14h57m-57 14h68" />
+      <text class="sketch-text" x="96" y="249" text-anchor="middle">CODEBASE</text><text class="sketch-text" x="263" y="266" text-anchor="middle">LANGUAGE AGENTS</text><text class="sketch-text" x="422" y="249" text-anchor="middle">LIVING DOCS</text>
+      <path class="sketch-dashed" d="M420 66V35H96v31"/><path class="sketch-arrow" d="m90 57 6 9 6-9"/><text class="sketch-small" x="260" y="29" text-anchor="middle">EVOLVING WITH THE CODE</text>
+    </>}
+    {kind === 'escape' && <>
+      <path class="sketch-grid" d="M40 30H480M40 270H480M40 30V270M480 30V270M150 30V270M260 30V270M370 30V270M40 110H480M40 190H480" />
+      <path class="sketch-maze" d="M70 65h138v58m0 47v65H70v-70m245-100h130v170H310v-62m0-51v-57M70 122v-57m198 0h-14m116 58v55" />
+      <path class="sketch-route" d="M94 204V146h59V91h101v55h54v90h104" />
+      <circle class="sketch-node-emphasis" cx="94" cy="204" r="10"/><circle class="sketch-outline" cx="254" cy="91" r="13"/><path class="sketch-stroke" d="m249 91 4 4 7-8"/>
+      <path class="sketch-arrow" d="m402 229 10 7-10 7"/>
+      <rect class="sketch-card" x="302" y="44" width="146" height="42" rx="3"/><text class="sketch-text" x="375" y="70" text-anchor="middle">THINK OUTSIDE THE ROOM</text>
+    </>}
+    {kind === 'proactive' && <>
+      <path class="sketch-grid" d="M40 40H480M40 260H480M40 40V260M480 40V260M150 40V260M260 40V260M370 40V260M40 150H480"/>
+      <path class="sketch-dashed" d="M83 151H436"/><circle class="sketch-node" cx="87" cy="150" r="34"/><circle class="sketch-node" cx="260" cy="150" r="42"/><circle class="sketch-node-emphasis" cx="433" cy="150" r="34"/>
+      <path class="sketch-stroke" d="M73 139h28m-28 11h20m-20 11h25M245 146a15 15 0 0 1 30 0c0 12-15 9-15 21m0 6v1"/><path class="sketch-white" d="m421 151 9 9 17-18"/>
+      <text class="sketch-text" x="87" y="220" text-anchor="middle">OBSERVE</text><text class="sketch-text" x="260" y="220" text-anchor="middle">ANTICIPATE</text><text class="sketch-text" x="433" y="220" text-anchor="middle">ASSIST</text>
+      <path class="sketch-arrow" d="m186 143 10 7-10 7m163-7 10 7-10 7"/><text class="sketch-small" x="260" y="75" text-anchor="middle">BEFORE AN EXPLICIT REQUEST</text>
+    </>}
+    {kind === 'context' && <>
+      <rect class="sketch-card" x="40" y="67" width="440" height="167" rx="5"/>
+      <path class="sketch-textline" d="M62 93h394M62 112h394M62 131h394M62 150h394M62 169h394M62 188h394M62 207h394"/>
+      <rect class="sketch-soft" x="117" y="84" width="124" height="19" rx="2"/><rect class="sketch-accent" x="294" y="179" width="107" height="19" rx="2"/>
+      <path class="sketch-route" d="M181 112v17c0 20 168 20 168 40"/><circle class="sketch-dot" cx="181" cy="94" r="3"/><circle class="sketch-white-fill" cx="348" cy="189" r="3"/>
+      <path class="sketch-dashed" d="M28 95H13v94h15"/><text class="sketch-small" x="260" y="267" text-anchor="middle">RELATED FACTS. DIFFERENT DISTANCES.</text>
+    </>}
+  </svg>
+</div>

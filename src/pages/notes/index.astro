@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DocumentReader from '../../components/DocumentReader.astro';
+import documentAssets from '../../data/document-assets.json';
+---
+<Layout title="Notes & talks" description="Reading notes and public talks on language models, reasoning, and agent systems by Qinyu Luo." active="notes">
+  <div class="container notes-page">
+    <header class="page-heading notes-heading">
+      <p class="eyebrow">Notes & talks</p>
+      <h1 class="page-title">Thinking out loud.</h1>
+      <p class="page-intro">Notes from papers I’m reading, questions I’m working through, and ideas shared along the way.</p>
+    </header>
+
+    <section aria-labelledby="reading-title" class="reading-section">
+      <div class="section-topline"><h2 id="reading-title">Reading notes</h2><span>01 entry</span></div>
+      <a class="featured-note" href="/notes/deepseek-r1/">
+        <div class="note-meta"><time datetime="2025-09-21">September 21, 2025</time><span>Paper notes</span></div>
+        <div class="note-content">
+          <div>
+            <h3>Reading DeepSeek-R1,<br />the Nature version.</h3>
+            <p>What the multistage training pipeline reveals about reasoning, SFT, and reinforcement learning — and the questions it leaves open.</p>
+            <div class="note-tags"><span>Reasoning</span><span>Reinforcement learning</span></div>
+          </div>
+          <span class="note-arrow" aria-hidden="true">↗</span>
+        </div>
+      </a>
+    </section>
+
+    <section id="talks" aria-labelledby="talks-title" class="talks-section">
+      <div class="section-topline"><h2 id="talks-title">Talks & presentations</h2><span>Selected</span></div>
+      <div class="talk-list">
+        <article class="talk">
+          <time datetime="2024-11-12">2024.11</time>
+          <div><p class="talk-venue">EMNLP 2024 · Miami</p><h3>RepoAgent: a repository-level documentation assistant</h3><p>A demo and technical introduction to keeping code documentation in step with a changing repository.</p><div class="talk-links"><a href="#repoagent-slides">Slides <span aria-hidden="true">→</span></a><a href="#repoagent-poster">Poster <span aria-hidden="true">→</span></a><a href="#repoagent-demo">Demo video <span aria-hidden="true">→</span></a></div></div>
+        </article>
+        <article class="talk">
+          <time datetime="2023-12-17">2023.12</time>
+          <div><p class="talk-venue">MiraclePlus · Beijing</p><h3>Introduction to XAgent and RepoAgent</h3><p>LLM agents in practice: autonomous task execution, multi-agent architectures, and repository documentation.</p><div class="talk-links"><a href="https://logic-10.github.io/talks/2023-12-17-presentation-1" target="_blank" rel="noopener noreferrer">Original talk record <span aria-hidden="true">↗</span></a></div></div>
+        </article>
+        <article class="talk">
+          <time datetime="2023-02-20">2023.02</time>
+          <div><p class="talk-venue">CICC · Beijing</p><h3>ChatGPT and language models in finance</h3><p>A technical discussion of the GPT model family, model tuning, and possible applications of language models in the financial industry.</p><div class="talk-links"><a href="https://logic-10.github.io/talks/2023-02-20-presentation-1" target="_blank" rel="noopener noreferrer">Original talk record <span aria-hidden="true">↗</span></a></div></div>
+        </article>
+      </div>
+      <div class="talk-materials">
+        <DocumentReader id="repoagent-slides" document={documentAssets['repoagent-slides']} heading="RepoAgent · EMNLP 2024 slides" />
+        <DocumentReader id="repoagent-poster" document={documentAssets['repoagent-poster']} heading="RepoAgent · EMNLP 2024 poster" />
+        <section class="talk-video" id="repoagent-demo" aria-labelledby="repoagent-demo-title">
+          <p class="eyebrow">WATCH HERE · SYSTEM DEMONSTRATION</p>
+          <h2 id="repoagent-demo-title">RepoAgent in action</h2>
+          <div class="talk-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/YPPJBVOP71M" title="RepoAgent system demonstration" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+        </section>
+      </div>
+    </section>
+  </div>
+</Layout>
+<style>
+  .talk-materials{display:grid;gap:3.5rem;margin-top:3.5rem}.talk-video{scroll-margin-top:7rem}.talk-video .eyebrow{font-size:.68rem;letter-spacing:.1em;color:var(--muted);margin:0 0 .7rem}.talk-video h2{font-family:var(--font-serif,'Newsreader Variable',Georgia,serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;margin:0 0 1.5rem}.talk-video-frame{aspect-ratio:16/9;background:#eeece4;border:1px solid var(--line,#deddd5)}.talk-video-frame iframe{display:block;width:100%;height:100%;border:0}
+  .notes-page{padding-bottom:7rem}.notes-heading{max-width:780px}.reading-section{margin-top:4.75rem}.section-topline{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:1rem;border-bottom:1px solid var(--line,#deddd5);gap:1rem}.section-topline h2{font-size:1rem;font-weight:500;margin:0}.section-topline>span{color:var(--muted,#73736a);font-size:.73rem;letter-spacing:.06em;text-transform:uppercase}.featured-note{display:block;text-decoration:none;color:inherit;padding:2rem 0 2.75rem;border-bottom:1px solid var(--line,#deddd5)}.note-meta{display:flex;gap:1.25rem;font-size:.75rem;color:var(--muted,#73736a)}.note-meta span{color:var(--accent,#b34d38)}.note-content{display:flex;align-items:center;justify-content:space-between;gap:3rem;margin-top:1.6rem}.note-content h3{font-family:var(--font-serif,'Newsreader Variable',Georgia,serif);font-size:clamp(2rem,3.4vw,3.1rem);font-weight:400;letter-spacing:-.035em;line-height:1.1;margin:0 0 1.2rem;transition:color .2s}.note-content p{max-width:630px;color:var(--muted,#73736a);font-size:.96rem;line-height:1.8;margin:0}.note-tags{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}.note-tags span{border:1px solid var(--line,#deddd5);padding:.3rem .7rem;border-radius:999px;font-size:.67rem}.note-arrow{font-size:2.4rem;color:var(--accent,#b34d38);transition:transform .2s}.featured-note:hover h3{color:var(--accent,#b34d38)}.featured-note:hover .note-arrow{transform:translate(4px,-4px)}.talks-section{margin-top:5rem;scroll-margin-top:7rem}.talk{display:grid;grid-template-columns:110px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--line,#deddd5)}.talk>time{font-size:.76rem;color:var(--muted,#73736a);font-variant-numeric:tabular-nums;padding-top:.15rem}.talk-venue{margin:0 0 .55rem!important;font-size:.7rem!important;letter-spacing:.05em;text-transform:uppercase;color:var(--accent,#b34d38)!important}.talk h3{font-family:var(--font-serif,'Newsreader Variable',Georgia,serif);font-size:1.65rem;font-weight:400;line-height:1.2;letter-spacing:-.02em;margin:0 0 .7rem}.talk p{max-width:680px;font-size:.87rem;line-height:1.8;color:var(--muted,#73736a);margin:0}.talk-links{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem}.talk-links a{font-size:.75rem;text-decoration:none;color:inherit}.talk-links a:hover{color:var(--accent,#b34d38)}.talk-links span{padding-left:.3rem}@media(max-width:640px){.notes-page{padding-bottom:4rem}.reading-section{margin-top:3rem}.note-content{gap:1rem}.note-content h3{font-size:2.15rem}.note-arrow{font-size:1.8rem}.talk{grid-template-columns:1fr;gap:.7rem;padding:1.7rem 0}.talks-section{margin-top:3.5rem}.talk h3{font-size:1.45rem}.note-meta{gap:.8rem;font-size:.7rem}}
+</style>

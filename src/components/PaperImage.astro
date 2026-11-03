@@ -1,0 +1,11 @@
+---
+import type { Publication } from '../data/research';
+interface Props { paper: Publication; mode?: 'card' | 'detail'; }
+const { paper, mode = 'card' } = Astro.props;
+const image = paper.image;
+if (!image) throw new Error(`A figure or cover is required for ${paper.slug}`);
+const displayedImage = mode === 'card' ? image.thumbnail || image : image;
+---
+<div class:list={['paper-image', `paper-image-${mode}`, { 'is-cover': image.kind === 'cover' }]}>
+  <img src={displayedImage.src} width={displayedImage.width} height={displayedImage.height} alt={displayedImage.alt} loading="lazy" decoding="async" />
+</div>

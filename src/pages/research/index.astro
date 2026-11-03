@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PublicationLibrary from '../../components/PublicationLibrary.astro';
+import { displayPublications as papers } from '../../data/research';
+import scholarSnapshot from '../../data/scholar-records.json';
+---
+<Layout title="Research" active="research" className="research-page">
+  <div class="container">
+    <header class="page-heading"><p class="eyebrow">PUBLICATIONS / PAPERS & REPORTS</p><h1 class="page-title">All <em>research.</em></h1><p class="page-intro">From agent systems and model learning to mathematical reasoning. Conference papers, preprints, and team reports, with the original methods and source material.</p><p class="scholar-note">{papers.length} works · {scholarSnapshot.records.length} Scholar records, grouped by version <a href="https://scholar.google.com/citations?user=ipMWfycAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a></p></header>
+    <PublicationLibrary papers={papers} id="research-publications" />
+  </div>
+</Layout>

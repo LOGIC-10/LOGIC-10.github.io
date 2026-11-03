@@ -1,0 +1,261 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ImageViewer from '../../components/ImageViewer.astro';
+import DocumentReader from '../../components/DocumentReader.astro';
+import { Content as XAgentReport } from '../../content/xagent-report.md';
+import documentAssets from '../../data/document-assets.json';
+import { publications, type Publication } from '../../data/research';
+import scholarSnapshot from '../../data/scholar-records.json';
+
+export function getStaticPaths() {
+  return publications.map((publication) => ({
+    params: { slug: publication.slug },
+    props: { publication },
+  }));
+}
+
+interface Props {
+  publication: Publication;
+}
+
+const { publication } = Astro.props;
+const fullDocument = documentAssets[publication.slug as keyof typeof documentAssets];
+const resourceLinks = publication.links.filter(link => link.label !== 'PDF' && !/\.(pdf|pptx?|docx?|xlsx?|zip)(?:[?#]|$)/i.test(link.href));
+const scholarRecords = scholarSnapshot.records.filter(record => publication.scholarIds?.some(id => record.scholarUrl.endsWith(`:${id}`)));
+const kindLabel = { conference: 'Conference paper', preprint: 'Preprint', 'technical-report': 'Technical report', 'project-report': 'Project report' }[publication.kind || 'conference'];
+const longAuthors = publication.authors.length > 15;
+const visibleAuthors = longAuthors ? publication.authors.slice(0,6) : publication.authors;
+const otherWork = publications
+  .filter((item) => item.slug !== publication.slug)
+  .sort((a, b) => {
+    const overlap = (item: Publication) => item.topics.filter((topic) => publication.topics.includes(topic)).length;
+    return overlap(b) - overlap(a) || b.publishedAt.localeCompare(a.publishedAt);
+  })
+  .slice(0, 2);
+---
+
+<Layout title={publication.shortTitle} description={publication.summary} active="research" className="paper-page">
+  <article class="container paper">
+    <a class="back-link" href="/research/"><span aria-hidden="true">←</span> All research</a>
+
+    <header class="page-heading paper-heading">
+      <p class="eyebrow">{publication.venueShort} <span aria-hidden="true">/</span> {kindLabel}</p>
+      <h1 class="paper-title">{publication.title}</h1>
+      <p class="paper-deck">{publication.summary}</p>
+      <p class="paper-authors">
+        {visibleAuthors.map((author, index) => (
+          <>
+            <span class:list={{ 'author-self': author === 'Qinyu Luo' }}>{author}</span>{publication.equalContribution?.includes(author) && <sup>*</sup>}{index < visibleAuthors.length - 1 ? ', ' : ''}
+          </>
+        ))}
+        {longAuthors && <>, …, <span class="author-self">Qinyu Luo</span> et al.</>}
+      </p>
+      {longAuthors && <details class="author-list"><summary>Full author list</summary><p>{publication.authors.join(', ')}</p></details>}
+      {publication.authorshipNote && <p class="authorship-note">{publication.authorshipNote}</p>}
+      {publication.equalContribution && <p class="contribution-note">* Equal contribution.</p>}
+    </header>
+
+    <ImageViewer paper={publication} />
+
+    <div class="detail-shell paper-grid">
+      <div class="detail-main">
+        <section class="paper-section" aria-labelledby="question-heading">
+          <p class="section-marker">01 / The question</p>
+          <h2 id="question-heading" class="question-title">{publication.question}</h2>
+        </section>
+
+        <section class="paper-section approach-section" aria-labelledby="approach-heading">
+          <p class="section-marker">02 / The approach</p>
+          <h2 id="approach-heading" class="section-title">{publication.shortTitle}</h2>
+          <div class="prose"><p>{publication.approach}</p></div>
+          <a class="text-link" href="#full-text">{fullDocument ? 'Read the full paper' : 'Read the full report'} <span aria-hidden="true">↓</span></a>
+        </section>
+
+        <section class="paper-section citation-section" aria-labelledby="citation-heading" data-citation>
+          <div class="citation-heading-row">
+            <div>
+              <p class="section-marker">03 / Citation</p>
+              <h2 id="citation-heading" class="section-title">Cite this work</h2>
+            </div>
+            <button class="button button-outline copy-button" type="button" data-copy-citation hidden>Copy BibTeX</button>
+          </div>
+          <label class="citation-label" for="publication-bibtex">BibTeX</label>
+          <textarea id="publication-bibtex" class="citation-text" readonly spellcheck="false" rows="14" aria-describedby="citation-help">{publication.bibtex}</textarea>
+          <p class="citation-help" id="citation-help" data-copy-status aria-live="polite">Select the citation to copy it manually.</p>
+        </section>
+
+        {(publication.aliases?.length || scholarRecords.length) && <section class="paper-section version-section" aria-labelledby="versions-heading"><p class="section-marker">04 / Versions & records</p><h2 id="versions-heading" class="section-title">Publication record</h2>{publication.aliases?.length && <div class="version-aliases"><p class="meta-label">Earlier or alternate titles</p><ul>{publication.aliases.map(alias => <li>{alias}</li>)}</ul></div>}<details class="scholar-records"><summary>{scholarRecords.length} Google Scholar record{scholarRecords.length === 1 ? '' : 's'}</summary><ul>{scholarRecords.map(record => <li><a href={record.scholarUrl} target="_blank" rel="noopener noreferrer">{record.title} ↗</a></li>)}</ul></details></section>}
+      </div>
+
+      <aside class="detail-aside paper-aside" aria-label="Publication details and resources">
+        <div class="aside-group">
+          <p class="meta-label">Venue / status</p>
+          <p class="venue-name">{publication.venue}</p>
+          {publication.statusLabel && <p class="publication-status">{publication.statusLabel}</p>}
+        </div>
+        <div class="aside-group">
+          <p class="meta-label">Research areas</p>
+          <ul class="topic-list">{publication.topics.map((topic) => <li>{topic}</li>)}</ul>
+        </div>
+        <div class="aside-group">
+          <p class="meta-label">Resources</p>
+          <ul class="resource-list paper-resources">
+            <li><a class="resource-link" href="#full-text">{fullDocument ? 'Read here' : 'Full project report'}<span aria-hidden="true">↓</span></a></li>
+            {resourceLinks.map((link) => (
+              <li><a class="resource-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label === 'Paper' ? 'Publication record' : link.label === 'Code & report' ? 'Code' : link.label}<span aria-hidden="true">↗</span></a></li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    {fullDocument && <DocumentReader id="full-text" document={fullDocument} heading="Full paper" />}
+    {publication.slug === 'xagent' && <section id="full-text" class="full-project-report" aria-labelledby="full-report-heading"><p class="eyebrow">READ HERE · PROJECT REPORT</p><h2 id="full-report-heading">XAgent: full project report</h2><div class="prose"><XAgentReport /></div></section>}
+
+    <section class="more-research" aria-labelledby="more-heading">
+      <div class="more-heading-row"><h2 id="more-heading">More research</h2><a class="text-link" href="/research/">View all <span aria-hidden="true">↗</span></a></div>
+      <div class="related-grid">
+        {otherWork.map((item) => (
+          <a class="related-paper" href={`/research/${item.slug}/`}>
+            <span class="related-meta">{item.venueShort}</span>
+            <h3>{item.shortTitle}<span aria-hidden="true">↗</span></h3>
+            <p>{item.summary}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  </article>
+</Layout>
+
+<script>
+  function prepareCitationCopy() {
+    document.querySelectorAll<HTMLElement>('[data-citation]').forEach((section) => {
+      const button = section.querySelector<HTMLButtonElement>('[data-copy-citation]');
+      const citation = section.querySelector<HTMLTextAreaElement>('textarea');
+      const status = section.querySelector<HTMLElement>('[data-copy-status]');
+      if (!button || !citation || !status || button.dataset.ready) return;
+
+      button.dataset.ready = 'true';
+      button.hidden = false;
+      button.addEventListener('click', async () => {
+        try {
+          if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+          await navigator.clipboard.writeText(citation.value);
+          status.textContent = 'BibTeX copied to clipboard.';
+          button.textContent = 'Copied';
+          window.setTimeout(() => { button.textContent = 'Copy BibTeX'; }, 1800);
+        } catch {
+          citation.focus();
+          citation.select();
+          status.textContent = 'Citation selected. Press ⌘C on Mac or Ctrl+C to copy.';
+        }
+      });
+    });
+  }
+
+  prepareCitationCopy();
+  document.addEventListener('astro:page-load', prepareCitationCopy);
+</script>
+
+<style>
+  .paper { padding-top: 3rem; }
+  .full-project-report { padding-top: 3rem; border-top: 1px solid var(--line); }
+  .full-project-report > h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
+  .full-project-report :global(.prose) { max-width: 850px; margin-inline: auto; overflow-wrap: anywhere; }
+  .full-project-report :global(h2) { margin-top: 3rem; }
+  .full-project-report :global(h3) { font-size: 1.6rem; margin-top: 2rem; }
+  .full-project-report :global(h4) { font-size: 1.2rem; margin-top: 1.5rem; }
+  .full-project-report :global(img) { width: auto; max-width: 100%; height: auto; margin-block: 1.8rem; }
+  .full-project-report :global(pre) { padding: 1.3rem; overflow: auto; font-size: .78rem; border: 1px solid var(--line); border-radius: 4px; }
+  .full-project-report :global(a) { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .paper-heading { padding-top: 3.9rem; padding-bottom: 3.1rem; }
+  .paper-heading .eyebrow { display: flex; align-items: center; gap: .85rem; }
+  .paper-heading .eyebrow span { opacity: .45; }
+  .paper-title { max-width: 1080px; margin: 1.3rem 0 1.7rem; font-size: clamp(2.4rem, 5.1vw, 4.6rem); line-height: 1.09; letter-spacing: -.047em; font-weight: 500; text-wrap: balance; }
+  .paper-deck { max-width: 790px; margin: 0 0 1.8rem; font-size: clamp(1.13rem, 1.8vw, 1.4rem); line-height: 1.55; color: var(--muted, #68706b); }
+  .paper-authors { max-width: 900px; margin: 0; font-size: .92rem; line-height: 1.9; color: var(--muted, #68706b); }
+  .author-self { color: var(--ink, #20352c); font-weight: 650; }
+  .paper-authors sup { font-size: .65rem; margin-left: .1em; }
+  .contribution-note { margin: .55rem 0 0; font-size: .78rem; color: var(--muted, #68706b); }
+  .authorship-note, .author-list { max-width: 850px; margin: .85rem 0 0; color: var(--muted); font-size: .8rem; line-height: 1.8; }
+  .author-list summary { cursor: pointer; color: var(--accent); }
+  .author-list p { padding-top: .7rem; }
+  .publication-status { color: var(--accent); margin: .6rem 0 0; font-size: .75rem; }
+  .paper-figure { margin: 0 0 4.7rem; }
+  .paper-figure :global(.research-diagram) { width: 100%; }
+  figcaption { display: flex; flex-wrap: wrap; gap: .6rem 1.3rem; margin-top: 1rem; font-size: .75rem; line-height: 1.6; color: var(--muted, #68706b); }
+  figcaption > span { flex-basis: 100%; }
+  figcaption > a { color: var(--accent); }
+  .version-section { border-top: 1px solid var(--line); padding-top: 2rem; }
+  .version-aliases ul, .scholar-records ul { padding-left: 1.2rem; color: var(--muted); font-size: .84rem; line-height: 1.8; }
+  .version-aliases .meta-label { font-size: .65rem; color: var(--muted); margin-bottom: .5rem; }
+  .scholar-records { margin-top: 1.5rem; }
+  .scholar-records summary { font-size: .8rem; color: var(--accent); cursor: pointer; }
+  .scholar-records a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .figure-index { flex: 0 0 auto; color: var(--ink, #20352c); }
+  .paper-grid { display: grid; grid-template-columns: minmax(0, 1fr) 255px; gap: clamp(3rem, 7vw, 8rem); }
+  .paper-section { padding-bottom: 2.8rem; }
+  .section-marker { margin: 0 0 1.3rem; font-size: .72rem; line-height: 1.5; text-transform: uppercase; letter-spacing: .13em; color: var(--muted, #68706b); }
+  .question-title { margin: 0; max-width: 760px; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 450; line-height: 1.3; letter-spacing: -.035em; text-wrap: balance; }
+  .approach-section, .citation-section { padding-top: 2.5rem; border-top: 1px solid var(--line, #dce2db); }
+  .section-title { margin: 0 0 1.2rem; font-size: 1.5rem; font-weight: 500; letter-spacing: -.025em; }
+  .prose p { margin-top: 0; font-size: 1.04rem; line-height: 1.85; }
+  .text-link { display: inline-flex; gap: .65rem; align-items: center; font-size: .86rem; font-weight: 550; color: var(--ink, #20352c); text-decoration: none; }
+  .text-link:hover { color: var(--accent, #496f50); }
+  .text-link span { transition: transform .2s; }
+  .text-link:hover span { transform: translate(2px, -2px); }
+  .paper-aside { align-self: start; position: sticky; top: 7rem; border-top: 1px solid var(--line, #dce2db); }
+  .aside-group { padding: 1.45rem 0 1.6rem; border-bottom: 1px solid var(--line, #dce2db); }
+  .aside-group .meta-label { margin: 0 0 .85rem; font-size: .68rem; text-transform: uppercase; letter-spacing: .11em; color: var(--muted, #68706b); }
+  .venue-name { font-size: .92rem; line-height: 1.6; margin: 0; }
+  .topic-list { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+  .topic-list li { padding: .38rem .6rem; border: 1px solid var(--line, #dce2db); border-radius: 4px; font-size: .72rem; line-height: 1.2; }
+  .paper-resources { margin: 0; padding: 0; list-style: none; }
+  .paper-resources li + li { margin-top: .75rem; }
+  .paper-resources .resource-link { display: flex; align-items: center; justify-content: space-between; font-size: .9rem; text-decoration: none; color: var(--ink, #20352c); }
+  .paper-resources .resource-link:hover { color: var(--accent, #496f50); }
+  .paper-resources .resource-link span { color: var(--muted, #68706b); }
+  .citation-heading-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .citation-heading-row .section-marker { margin-bottom: .8rem; }
+  .copy-button { flex-shrink: 0; padding: .6rem .85rem; font-size: .75rem; }
+  .copy-button[hidden] { display: none; }
+  .citation-label { display: block; margin: .4rem 0 .6rem; color: var(--muted, #68706b); font-size: .74rem; }
+  .citation-text { display: block; width: 100%; box-sizing: border-box; resize: vertical; min-height: 13rem; padding: 1.25rem; border: 1px solid var(--line, #dce2db); border-radius: 5px; background: var(--surface, #f2f4ee); color: var(--ink, #20352c); font: .72rem/1.75 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; tab-size: 2; overflow-wrap: normal; white-space: pre; }
+  .citation-text:focus-visible { outline: 2px solid var(--accent, #496f50); outline-offset: 3px; }
+  .citation-help { min-height: 1.5em; margin: .7rem 0 0; font-size: .72rem; line-height: 1.6; color: var(--muted, #68706b); }
+  .more-research { margin-top: 3.3rem; padding: 3.2rem 0 5rem; border-top: 1px solid var(--line, #dce2db); }
+  .more-heading-row { display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; margin-bottom: 2rem; }
+  .more-heading-row h2 { margin: 0; font-size: 1.7rem; letter-spacing: -.035em; font-weight: 500; }
+  .related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+  .related-paper { display: block; padding-top: 1.2rem; border-top: 1px solid var(--line, #dce2db); color: inherit; text-decoration: none; }
+  .related-meta { font-size: .67rem; text-transform: uppercase; letter-spacing: .09em; color: var(--muted, #68706b); }
+  .related-paper h3 { display: flex; justify-content: space-between; gap: 1rem; margin: 1rem 0 .8rem; font-size: 1.4rem; line-height: 1.3; letter-spacing: -.025em; font-weight: 500; }
+  .related-paper h3 span { flex-shrink: 0; font-size: 1rem; transition: transform .2s; }
+  .related-paper:hover h3 span { transform: translate(3px, -3px); }
+  .related-paper p { max-width: 400px; margin: 0; color: var(--muted, #68706b); font-size: .9rem; line-height: 1.7; }
+  @media (max-width: 850px) {
+    .paper { padding-top: 2rem; }
+    .paper-heading { padding-top: 2.7rem; }
+    .paper-grid { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; }
+    .paper-aside { position: static; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+    .paper-figure { margin-bottom: 3.2rem; }
+    .aside-group { border-bottom: 0; }
+    .more-research { margin-top: 2rem; }
+  }
+  @media (max-width: 540px) {
+    .paper-heading { padding-bottom: 2.4rem; }
+    .paper-title { font-size: 2.3rem; }
+    .paper-authors { font-size: .8rem; }
+    .paper-aside { grid-template-columns: 1fr; gap: 0; }
+    .aside-group { padding: 1.1rem 0; border-bottom: 1px solid var(--line, #dce2db); }
+    .related-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+    .citation-heading-row { align-items: flex-end; }
+    .copy-button { margin-bottom: 1.2rem; }
+    figcaption { gap: .65rem; font-size: .68rem; }
+    .more-research { padding-bottom: 3rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .text-link span, .related-paper h3 span { transition: none; }
+  }
+</style>

@@ -1,0 +1,13 @@
+---
+import PaperImage from './PaperImage.astro';
+import type { Publication } from '../data/research';
+interface Props { paper: Publication; variant?: 'card' | 'row'; headingLevel?: 'h2' | 'h3'; }
+const { paper, variant = 'card', headingLevel = 'h2' } = Astro.props;
+const Heading = headingLevel;
+const monthLabel = new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${paper.publishedAt}-01T00:00:00Z`));
+const authorSummary = paper.authors.length > 3 ? `${paper.authors.slice(0,3).join(', ')} et al.` : paper.authors.join(', ');
+---
+<article class:list={['publication-card', { 'publication-row': variant === 'row' }]} data-paper data-slug={paper.slug} data-published-at={paper.publishedAt} data-scholar-ids={paper.scholarIds?.join(' ')} data-title={`${paper.title} ${paper.aliases?.join(' ') || ''} ${paper.authors.join(' ')} ${paper.authorshipNote || ''} ${paper.summary} ${paper.topics.join(' ')} ${monthLabel} ${paper.publishedAt} ${paper.venueShort}`.toLowerCase()} data-topics={paper.topics.join('|')}>
+  <a class="publication-visual" href={`/research/${paper.slug}/`} aria-label={`Read about ${paper.shortTitle}`}><PaperImage paper={paper} /><span class="visual-arrow" aria-hidden="true">↗</span></a>
+  <div class="publication-body"><div class="publication-meta"><span>{paper.venueShort}</span><time datetime={paper.publishedAt}>{monthLabel}</time></div><Heading class="publication-title"><a href={`/research/${paper.slug}/`}>{paper.title}</a></Heading><p class="publication-authors">{authorSummary}</p><p class="publication-summary">{paper.summary}</p><div class="publication-bottom"><span>{paper.statusLabel || 'Conference paper'}</span><a href={`/research/${paper.slug}/`}>Paper & resources <span aria-hidden="true">→</span></a></div></div>
+</article>

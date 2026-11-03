@@ -1,0 +1,72 @@
+{
+  "repoagent": {
+    "month": "2024-11",
+    "basis": "Formal proceedings publication month",
+    "sources": ["https://aclanthology.org/2024.emnlp-demo.46/"]
+  },
+  "proactive-agent": {
+    "month": "2025-04",
+    "basis": "ICLR 2025 conference month; proceedings do not specify a separate publication month",
+    "sources": ["https://proceedings.iclr.cc/paper_files/paper/2025/hash/75c37811e830bf029584b1c6fac17726-Abstract-Conference.html", "https://iclr.cc/Conferences/2025"]
+  },
+  "escapebench": {
+    "month": "2025-07",
+    "basis": "Formal proceedings publication month",
+    "sources": ["https://aclanthology.org/2025.acl-long.39/"]
+  },
+  "long-context-bias": {
+    "month": "2025-07",
+    "basis": "Formal proceedings publication month",
+    "sources": ["https://aclanthology.org/2025.findings-acl.28/"]
+  },
+  "ui-tars-2": {
+    "month": "2025-09",
+    "basis": "Report first submitted to arXiv on September 2, 2025",
+    "sources": ["https://arxiv.org/abs/2509.02544"]
+  },
+  "seed-1-8": {
+    "month": "2026-03",
+    "basis": "Report first submitted to arXiv on March 21, 2026; distinct from the model release date",
+    "sources": ["https://arxiv.org/abs/2603.20633"]
+  },
+  "agent-world": {
+    "month": "2026-04",
+    "basis": "Preprint first submitted to arXiv on April 20, 2026",
+    "sources": ["https://arxiv.org/abs/2604.18292"]
+  },
+  "xagent": {
+    "month": "2023-10",
+    "basis": "Initial project release 0.1.0 on October 16, 2023; report blog day not independently specified",
+    "sources": ["https://github.com/OpenBMB/XAgent/blob/main/CHANGELOG.md"]
+  },
+  "world-model-tool": {
+    "month": "2026-07",
+    "basis": "Formal proceedings publication month",
+    "sources": ["https://aclanthology.org/2026.acl-long.623/"]
+  },
+  "on-policy-distillation-ii": {
+    "month": "2026-09",
+    "basis": "Preprint first submitted to arXiv on September 3, 2026",
+    "sources": ["https://arxiv.org/abs/2609.04172"]
+  },
+  "boundary-certificate-proofs": {
+    "month": "2026-08",
+    "basis": "The listed version 2 was posted publicly on August 28, 2026",
+    "sources": ["https://www.preprints.org/manuscript/202608.1661/v2"]
+  },
+  "test-time-exploration": {
+    "month": "2026-08",
+    "basis": "Publisher-registered Crossref metadata: published online August 8, 2026; print August 9, 2026",
+    "sources": ["https://api.crossref.org/works/10.1145/3770855.3817790"]
+  },
+  "seed-2-0": {
+    "month": "2026-06",
+    "basis": "Report first submitted to arXiv on June 30, 2026; distinct from the model release date",
+    "sources": ["https://arxiv.org/abs/2607.00248"]
+  },
+  "seed-2-1": {
+    "month": "2026-06",
+    "basis": "Official model card released with Seed2.1 on June 23, 2026",
+    "sources": ["https://seed.bytedance.com/en/seed2_1", "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity"]
+  }
+}

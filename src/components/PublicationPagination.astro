@@ -1,0 +1,11 @@
+---
+interface Props { totalPages: number; position: 'top' | 'bottom'; resultsId: string; }
+const { totalPages, position, resultsId } = Astro.props;
+---
+<nav class="publication-pagination" data-pagination-top={position === 'top' || undefined} data-pagination-bottom={position === 'bottom' || undefined} aria-label={`Publication pages (${position})`} hidden>
+  <button type="button" data-page-prev aria-controls={resultsId} disabled>← Previous</button>
+  <div class="pagination-numbers" data-page-numbers>{Array.from({ length: totalPages }, (_, index) => <button type="button" data-page-number={index + 1} aria-label={`Go to page ${index + 1}`} aria-controls={resultsId} aria-current={index === 0 ? 'page' : undefined}>{index + 1}</button>)}</div>
+  <button type="button" data-page-next aria-controls={resultsId}>Next →</button>
+  <label class="pagination-jump">Jump to page <select data-page-select aria-label="Jump to page" aria-controls={resultsId}>{Array.from({ length: totalPages }, (_, index) => <option value={index + 1}>{index + 1}</option>)}</select></label>
+  <span class="pagination-summary" data-page-summary>Page 1 of {totalPages}</span>
+</nav>

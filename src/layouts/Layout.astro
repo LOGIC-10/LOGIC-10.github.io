@@ -1,0 +1,73 @@
+---
+import '../styles/site.css';
+import { profile } from '../data/profile';
+interface Props {
+  title: string;
+  description?: string;
+  active?: 'home' | 'research' | 'projects' | 'notes' | 'about';
+  className?: string;
+}
+const { title, description = `Qinyu Luo at ${profile.affiliation} — research on language model agents, reasoning, tool use, and multi-agent systems.`, active = 'home', className = '' } = Astro.props;
+const navigation = [
+  { label: 'Research', href: '/research/', key: 'research' },
+  { label: 'Projects', href: '/projects/', key: 'projects' },
+  { label: 'Notes & talks', href: '/notes/', key: 'notes' },
+  { label: 'About', href: '/about/', key: 'about' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#faf9f6" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} · Qinyu Luo`} />
+    <meta property="og:description" content={description} />
+    <title>{title === 'Qinyu Luo' ? `Qinyu Luo — ${profile.affiliation}` : `${title} · Qinyu Luo`}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class={className}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="site-brand" href="/" aria-label="Qinyu Luo, homepage"><span class="brand-symbol" aria-hidden="true">ql</span><span class="brand-name">Qinyu Luo<span class="brand-role">{profile.affiliation.toUpperCase()}</span></span></a>
+        <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
+          {navigation.map(item => <a href={item.href} class:list={[{ 'is-current': active === item.key }]} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
+        </nav>
+        <div class="header-actions"><a class="header-contact" href={`mailto:${profile.email}`}>Let’s talk <span aria-hidden="true">↗</span></a><button type="button" class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span></button></div>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-main"><div><p class="eyebrow">ALWAYS CURIOUS. OPEN TO CONVERSATION.</p><h2>Let’s compare <em>notes.</em></h2><p>Agents, reasoning, open source, or an idea worth exploring.</p></div><a class="footer-email" href={`mailto:${profile.email}`}>{profile.email}<span aria-hidden="true">↗</span></a></div>
+        <div class="footer-bottom"><a class="footer-name" href="/">Qinyu Luo<span>.</span></a><div class="footer-links"><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href={profile.scholar} target="_blank" rel="noopener noreferrer">Scholar ↗</a></div><span class="copyright">© {new Date().getFullYear()} Qinyu Luo</span></div>
+      </div>
+    </footer>
+    <script>
+      document.documentElement.classList.add('has-js');
+      const menu = document.querySelector<HTMLButtonElement>('.menu-button');
+      const nav = document.querySelector<HTMLElement>('.site-nav');
+      function closeMenu(returnFocus = false) {
+        if (!menu || !nav) return;
+        menu.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-label', 'Open menu');
+        nav.classList.remove('is-open');
+        if (returnFocus) menu.focus();
+      }
+      menu?.addEventListener('click', () => {
+        const open = menu.getAttribute('aria-expanded') !== 'true';
+        menu.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        nav?.classList.toggle('is-open', open);
+      });
+      nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => closeMenu()));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') closeMenu(true);
+      });
+      window.matchMedia('(min-width: 761px)').addEventListener('change', () => closeMenu());
+    </script>
+  </body>
+</html>

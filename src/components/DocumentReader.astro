@@ -1,0 +1,27 @@
+---
+import 'pdfjs-dist/web/pdf_viewer.css';
+interface Props {
+  id: string;
+  document: { id: string; title: string; src: string; pageCount: number; versionNote?: string; originalFormat?: string };
+  heading?: string;
+}
+const { id, document: file, heading = 'Read the full document' } = Astro.props;
+---
+<section class="inline-document" id={id} aria-labelledby={`${id}-title`} data-document-reader data-document-url={file.src} data-document-pages={file.pageCount}>
+  <div class="document-heading"><div><p class="eyebrow">READ HERE · {file.pageCount} {file.originalFormat === 'pptx' ? 'SLIDES' : 'PAGES'}</p><h2 id={`${id}-title`}>{heading}</h2></div><span class="document-format">{file.originalFormat === 'pptx' ? 'Presentation' : 'Document'}</span></div>
+  {file.versionNote && <p class="document-version">{file.versionNote}</p>}
+  <div class="document-reader-shell">
+    <div class="document-toolbar" role="toolbar" aria-label={`${file.title} reading controls`}>
+      <div class="document-page-controls"><button type="button" data-document-prev aria-label="Previous page" disabled>←</button><label>Page <input type="number" data-document-page value="1" min="1" max={file.pageCount} aria-label="Page number" disabled /></label><span class="document-total">/ {file.pageCount}</span><button type="button" data-document-next aria-label="Next page" disabled>→</button></div>
+      <label class="document-zoom-label"><span class="sr-only">Document zoom</span><select data-document-zoom aria-label="Document zoom" disabled><option value="page-width">Fit width</option><option value="page-fit">Fit page</option><option value="0.75">75%</option><option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option><option value="2">200%</option></select></label>
+      <div class="document-search"><label><span class="sr-only">Search document</span><input type="search" data-document-search placeholder="Search this document" aria-label="Search document" disabled /></label><button type="button" data-document-find aria-label="Find next match" disabled>↵</button><output data-document-matches aria-live="polite"></output></div>
+      <button class="document-expand" type="button" data-document-expand aria-label="Expand reader" aria-pressed="false">Expand ↗</button>
+    </div>
+    <div class="document-stage"><div class="document-scroll" data-document-container tabindex="0" aria-label={`${file.title} full document`}><div class="pdfViewer" data-document-viewer></div></div><p class="document-status" data-document-status role="status">Loading document…</p><button type="button" data-document-retry class="document-retry" hidden>Try again</button></div>
+    <p class="document-reader-caption">Scroll through every page. Select text to copy, or use search to find a passage.</p>
+  </div>
+</section>
+<script>
+  import { initializeDocumentReaders } from '../scripts/document-reader';
+  initializeDocumentReaders();
+</script>

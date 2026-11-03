@@ -1,0 +1,144 @@
+{
+  "profile": "https://scholar.google.com/citations?user=ipMWfycAAAAJ&hl=en",
+  "checkedAt": "2026-11-03",
+  "records": [
+    {
+      "details": "RepoAgent: An llm-powered open-source framework for repository-level code documentation generation\nQ Luo, Y Ye, S Liang, Z Zhang, Y Qin, Y Lu, Y Wu, X Cong, Y Lin, Y Zhang, ...\nEMNLP 2024",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:JoZmwDi-zQgC",
+      "title": "RepoAgent: An llm-powered open-source framework for repository-level code documentation generation",
+      "year": "2024"
+    },
+    {
+      "details": "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance\nY Lu, S Yang, C Qian, G Chen, Q Luo, Y Wu, H Wang, X Cong, Z Zhang, ...\nICLR2025",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:dTyEYWd-f8wC",
+      "title": "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance",
+      "year": "2024"
+    },
+    {
+      "details": "Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning\nH Wang, H Zou, H Song, J Feng, J Fang, J Lu, L Liu, Q Luo, S Liang, ...\narXiv preprint arXiv:2509.02544",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:5awf1xo2G04C",
+      "title": "Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning",
+      "year": "2025"
+    },
+    {
+      "details": "Seed2. 0 model card: Towards intelligence frontier for real-world complexity\nB Seed\narXiv preprint arXiv:2607.00248",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:kzcrU_BdoSEC",
+      "title": "Seed2. 0 model card: Towards intelligence frontier for real-world complexity",
+      "year": "2026"
+    },
+    {
+      "details": "Seed1.8 Model Card: Towards Generalized Real-World Agency\nB Seed\nTechnical report / Model card",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:ye4kPcJQO24C",
+      "title": "Seed1.8 Model Card: Towards Generalized Real-World Agency",
+      "year": "2025"
+    },
+    {
+      "details": "Agent-world: Scaling real-world environment synthesis for evolving general agent intelligence\nG Dong, J Lu, J Huang, W Zhong, L Liu, S Huang, Z Li, Y Zhao, X Song, ...\narXiv preprint arXiv:2604.18292",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:PR6Y55bgFSsC",
+      "title": "Agent-world: Scaling real-world environment synthesis for evolving general agent intelligence",
+      "year": "2026"
+    },
+    {
+      "details": "Xagent: An autonomous agent for complex task solving\nXA Team\nXAgent blog",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:LjlpjdlvIbIC",
+      "title": "Xagent: An autonomous agent for complex task solving",
+      "year": "2023"
+    },
+    {
+      "details": "others. 2025a. Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning\nH Wang, H Zou, H Song, J Feng, J Fang, J Lu, L Liu, Q Luo, S Liang, ...\narXiv preprint arXiv:2509.02544",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:N5tVd3kTz84C",
+      "title": "others. 2025a. Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning",
+      "year": "1"
+    },
+    {
+      "details": "Distance between relevant information pieces causes bias in long-context LLMs\nR Tian, Y Li, Y Fu, S Deng, Q Luo, C Qian, S Wang, X Cong, Z Zhang, ...\nFindings of the Association for Computational Linguistics: ACL 2025, 521-533",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:9vf0nzSNQJEC",
+      "title": "Distance between relevant information pieces causes bias in long-context LLMs",
+      "year": "2025"
+    },
+    {
+      "details": "Current agents fail to leverage world model as tool for foresight\nC Qian, EC Acikgoz, B Li, X Chen, Y Zhang, B He, Q Luo, G Tur, ...\nProceedings of the 64th Annual Meeting of the Association for Computational …",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:VL0QpB8kHFEC",
+      "title": "Current agents fail to leverage world model as tool for foresight",
+      "year": "2026"
+    },
+    {
+      "details": "Escapebench: Pushing language models to think outside the box\nC Qian, P Han, Q Luo, B He, X Chen, Y Zhang, H Du, J Yao, X Yang, ...\narXiv preprint arXiv:2412.13549 2",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:SdhP9T11ey4C",
+      "title": "Escapebench: Pushing language models to think outside the box",
+      "year": "2024"
+    },
+    {
+      "details": "Rethinking on-policy distillation of large language models II: One training example\nZ Fu, B He, Y Zuo, H Huang, J Zhang, R Xiao, C Qian, Q Luo, H Gao, ...\narXiv preprint arXiv:2609.04172",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:uLbwQdceFCQC",
+      "title": "Rethinking on-policy distillation of large language models II: One training example",
+      "year": "2026"
+    },
+    {
+      "details": "Agent-world: Scaling real-world environment synthesis for evolving general agent intelligence, 2026\nG Dong, J Lu, J Huang, W Zhong, L Liu, S Huang, Z Li, Y Zhao, X Song, ...\nURL https://arxiv. org/abs/2604.18292",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:W5xh706n7nkC",
+      "title": "Agent-world: Scaling real-world environment synthesis for evolving general agent intelligence, 2026",
+      "year": ""
+    },
+    {
+      "details": "EscapeBench: Towards advancing creative intelligence of language model agents\nC Qian, P Han, Q Luo, B He, X Chen, Y Zhang, H Du, J Yao, X Yang, ...\nProceedings of the 63rd Annual Meeting of the Association for Computational …",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:eq2jaN3J8jMC",
+      "title": "EscapeBench: Towards advancing creative intelligence of language model agents",
+      "year": "2025"
+    },
+    {
+      "details": "Repoagent: An llmpowered open-source framework for repository-level code documentation generation, 2024\nQ Luo, Y Ye, S Liang, Z Zhang, Y Qin, Y Lu, Y Wu, X Cong, Y Lin, Y Zhang, ...\nURL https://arxiv. org/abs/2402.16667",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:WqliGbK-hY8C",
+      "title": "Repoagent: An llmpowered open-source framework for repository-level code documentation generation, 2024",
+      "year": "2024"
+    },
+    {
+      "details": "Junda Du\nH Wang, H Zou, H Song, J Feng, J Fang, J Lu, L Liu, Q Luo, S Liang, ...\nKai Cai, Kuanye Li, Lichen Yuan, Meilan Han, Minchao Wang, Shuyue Guo …",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:hkOj_22Ku90C",
+      "title": "Junda Du",
+      "year": "2025"
+    },
+    {
+      "details": "Rethinking on-policy distillation of large language models ii: One training example, 2026\nZ Fu, B He, Y Zuo, H Huang, J Zhang, R Xiao, C Qian, Q Luo, H ang Gao, ...\nURL https://arxiv. org/abs/2609.04172",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:Fu2w8maKXqMC",
+      "title": "Rethinking on-policy distillation of large language models ii: One training example, 2026",
+      "year": ""
+    },
+    {
+      "details": "Seed2. 1 model card: Agentic intelligence for productivity\nBD Seed\nTechnical report, ByteDance, 2026. URL https://lf3-static. bytednsdoc. com …",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:NJ774b8OgUMC",
+      "title": "Seed2. 1 model card: Agentic intelligence for productivity",
+      "year": "2026"
+    },
+    {
+      "details": "Two boundary-certificate proofs of the Crouzeix theorem: fiberwise Fourier recurrence and defect–Gram telescoping\nQ Luo\nPreprints. org preprint 202608",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:_Ybze24A_UAC",
+      "title": "Two boundary-certificate proofs of the Crouzeix theorem: fiberwise Fourier recurrence and defect–Gram telescoping",
+      "year": "2026"
+    },
+    {
+      "details": "The Sharp Numerical-Range Spectral-Set Inequality\nQ Luo\nPreprints",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:JQOojiI6XY0C",
+      "title": "The Sharp Numerical-Range Spectral-Set Inequality",
+      "year": "2026"
+    },
+    {
+      "details": "Test-Time Deep Thinking to Explore Implicit Rules\nW Chen, X Cong, Z Zhang, Y Lu, S Zhao, Y Wu, Q Luo, H Chen, Y Lin, ...\nProceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and …",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:UHK10RUVsp4C",
+      "title": "Test-Time Deep Thinking to Explore Implicit Rules",
+      "year": "2026"
+    },
+    {
+      "details": "World Model as Tool: An Empirical Study on Agent Foresight Governance\nC Qian, EC Acikgoz, B Li, X Chen, Y Zhang, B He, Q Luo, D Hakkani-Tür, ...",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:dQ2og3OwTAUC",
+      "title": "World Model as Tool: An Empirical Study on Agent Foresight Governance",
+      "year": ""
+    },
+    {
+      "details": "Test-Time Exploration in Unknown Environments\nW Chen, X Cong, Z Zhang, Y Lu, S Zhao, Y Wu, Q Luo, H Chen, Y Lin, ...",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipMWfycAAAAJ&pagesize=100&citation_for_view=ipMWfycAAAAJ:ZuybSZzF8UAC",
+      "title": "Test-Time Exploration in Unknown Environments",
+      "year": ""
+    }
+  ]
+}

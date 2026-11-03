@@ -1,0 +1,24 @@
+---
+import PublicationCard from './PublicationCard.astro';
+import PublicationPagination from './PublicationPagination.astro';
+import type { Publication } from '../data/research';
+interface Props { papers: Publication[]; id: string; variant?: 'card' | 'row'; headingLevel?: 'h2' | 'h3'; }
+const { papers, id, variant = 'card', headingLevel = 'h2' } = Astro.props;
+const pageSize = 10;
+const totalPages = Math.ceil(papers.length / pageSize);
+const resultsId = `${id}-results`;
+---
+<div class="publication-library" id={id} data-publication-library data-page-size={pageSize}>
+  <div class="research-controls" data-research-controls hidden>
+    <div class="research-filters" role="group" aria-label="Filter research by area"><button type="button" class="research-filter is-selected" data-filter="all" aria-pressed="true">All work</button><button type="button" class="research-filter" data-filter="agent" aria-pressed="false">Agents</button><button type="button" class="research-filter" data-filter="model" aria-pressed="false">Models</button><button type="button" class="research-filter" data-filter="reasoning" aria-pressed="false">Reasoning</button><button type="button" class="research-filter" data-filter="context" aria-pressed="false">Long context</button><button type="button" class="research-filter" data-filter="mathematics" aria-pressed="false">Mathematics</button></div>
+    <label class="research-search"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.3"/></svg><span class="sr-only">Search publications</span><input type="search" placeholder="Search papers, topics, authors…" data-research-search autocomplete="off" /></label>
+  </div>
+  <div class="library-results-row"><div class="results-caption"><span aria-live="polite" data-result-count>{papers.length} works</span><span>10 per page</span></div><PublicationPagination totalPages={totalPages} position="top" resultsId={resultsId} /></div>
+  <div class={variant === 'row' ? 'publication-rows' : 'publication-grid'} id={resultsId} data-publication-list>{papers.map(paper => <PublicationCard paper={paper} variant={variant} headingLevel={headingLevel} />)}</div>
+  <div class="no-results" hidden data-no-results><h2>No papers found.</h2><p>Try another keyword or research area.</p><button type="button" data-reset-search>Clear search & filters</button></div>
+  <PublicationPagination totalPages={totalPages} position="bottom" resultsId={resultsId} />
+</div>
+<script>
+  import { initializePublicationLibraries } from '../scripts/publication-library';
+  initializePublicationLibraries();
+</script>

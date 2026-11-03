@@ -1,0 +1,26 @@
+---
+import type { Publication } from '../data/research';
+import PaperImage from './PaperImage.astro';
+interface Props { paper: Publication; }
+const { paper } = Astro.props;
+const image = paper.image!;
+const dialogId = `figure-${paper.slug}`;
+---
+<figure class="paper-figure" data-inline-image>
+  <button type="button" class="figure-open" data-image-open aria-controls={dialogId} aria-label={`Enlarge ${image.kind === 'cover' ? 'cover' : 'figure'} for ${paper.shortTitle}`}><PaperImage paper={paper} mode="detail" /></button>
+  <figcaption><span>{image.caption}</span><a href={image.source} target="_blank" rel="noopener noreferrer">Original source ↗</a><button type="button" data-image-open aria-controls={dialogId}>Enlarge in page ↗</button></figcaption>
+  <dialog id={dialogId} class="image-dialog"><div class="image-dialog-toolbar"><span>{paper.shortTitle}</span><div><button type="button" data-image-zoom="out" aria-label="Zoom image out">−</button><button type="button" data-image-zoom="fit">Fit</button><button type="button" data-image-zoom="in" aria-label="Zoom image in">+</button><button type="button" data-image-close aria-label="Close image">Close ×</button></div></div><div class="image-dialog-content"><img src={image.src} alt={image.alt} width={image.width} height={image.height} /></div><p>{image.caption}</p></dialog>
+</figure>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-inline-image]').forEach(root => {
+    const dialog = root.querySelector<HTMLDialogElement>('dialog')!;
+    const image = dialog.querySelector<HTMLImageElement>('img')!;
+    let zoom = 100;
+    let trigger: HTMLElement | null = null;
+    root.querySelectorAll<HTMLButtonElement>('[data-image-open]').forEach(button => button.addEventListener('click', () => { trigger = button; zoom = 100; image.style.width = '100%'; dialog.showModal(); }));
+    dialog.querySelector('[data-image-close]')!.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => trigger?.focus());
+    dialog.querySelectorAll<HTMLButtonElement>('[data-image-zoom]').forEach(button => button.addEventListener('click', () => { zoom = button.dataset.imageZoom === 'fit' ? 100 : Math.max(50, Math.min(300, zoom + (button.dataset.imageZoom === 'in' ? 25 : -25))); image.style.width = `${zoom}%`; }));
+  });
+</script>

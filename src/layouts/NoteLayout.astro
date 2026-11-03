@@ -1,0 +1,35 @@
+---
+import Layout from './Layout.astro';
+import { profile } from '../data/profile';
+interface Props {
+  frontmatter: { title: string; date: string | Date; description?: string };
+  headings?: { depth: number; slug: string; text: string }[];
+}
+const { frontmatter, headings: allHeadings = [] } = Astro.props;
+const date = new Date(frontmatter.date);
+const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const headings = allHeadings.filter((heading) => heading.depth === 2);
+---
+<Layout title={frontmatter.title} description={frontmatter.description} active="notes" className="note-page">
+  <div class="container note-container">
+    <a href="/notes/" class="back-link">← All notes</a>
+    <header class="article-heading">
+      <div class="article-meta"><span>Reading notes</span><time datetime={date.toISOString().slice(0, 10)}>{formattedDate}</time></div>
+      <h1>DeepSeek-R1.<br /><em>A closer reading.</em></h1>
+      <p class="article-deck">Notes on the Nature version: the training stages, the role of SFT and RL, and a few questions worth keeping open.</p>
+      <p class="article-byline">Qinyu Luo <span>·</span> DeepSeek · Reasoning · Reinforcement learning</p>
+    </header>
+    <div class="article-grid">
+      <article class="prose article-body"><slot /></article>
+      <aside class="article-aside" aria-label="Contents">
+        {headings.length > 0 && <nav aria-label="On this page"><p class="meta-label">On this page</p><ol>{headings.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text.replace(/^[①②③④⑤]\s*/, '')}</a></li>)}</ol></nav>}
+        <div class="article-context"><p class="meta-label">A note on these notes</p><p>This is a personal reading record from September 2025. Interpretations and open questions reflect my thinking at the time.</p></div>
+        <a class="article-source" href="https://doi.org/10.1038/s41586-025-09422-z" target="_blank" rel="noopener noreferrer">Read the Nature paper ↗</a>
+      </aside>
+    </div>
+    <div class="article-end"><span aria-hidden="true">✳</span><p>Thanks for reading.</p><a href={`mailto:${profile.email}`}>Corrections or thoughts? Get in touch ↗</a></div>
+  </div>
+</Layout>
+<style>
+  .note-container{padding-top:3rem;padding-bottom:6rem}.article-heading{max-width:850px;margin:3rem 0 3.5rem}.article-meta{display:flex;gap:1.4rem;font-size:.72rem;color:var(--muted,#73736a)}.article-meta>span{color:var(--accent,#b34d38);text-transform:uppercase;letter-spacing:.1em}.article-heading h1{font-family:var(--font-serif,'Newsreader Variable',Georgia,serif);font-weight:400;font-size:clamp(3rem,5.8vw,5.3rem);line-height:.99;letter-spacing:-.05em;margin:1.7rem 0}.article-heading em{font-weight:400;color:var(--accent,#b34d38)}.article-deck{font-size:1.12rem;line-height:1.75;max-width:670px;color:var(--muted,#73736a)}.article-byline{font-size:.72rem;margin-top:1.8rem;color:var(--muted,#73736a)}.article-byline span{padding:0 .55rem}.article-grid{display:grid;grid-template-columns:minmax(0,760px) minmax(190px,1fr);gap:5rem;border-top:1px solid var(--line,#deddd5);padding-top:3rem}.article-body{min-width:0;font-size:.98rem;line-height:1.95}.article-body :global(p){margin:0 0 1.5rem}.article-body :global(h2){font-family:var(--font-serif,'Newsreader Variable',Georgia,serif);font-weight:400;font-size:2rem;line-height:1.23;letter-spacing:-.025em;margin:3rem 0 1.3rem;scroll-margin-top:7rem}.article-body :global(h2:first-child){margin-top:0}.article-body :global(strong){font-weight:600}.article-body :global(figure){margin:2.2rem 0;padding:1rem;background:#f1f0ea;border:1px solid var(--line,#deddd5)}.article-body :global(img){display:block;max-width:100%;height:auto;margin:0 auto}.article-body :global(figcaption){margin-top:.8rem;font-size:.68rem;line-height:1.7;color:var(--muted,#73736a)}.article-aside{align-self:start;position:sticky;top:7.5rem;padding-top:.15rem}.article-aside .meta-label{font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted,#73736a);margin:0 0 1rem}.article-aside ol{list-style:none;margin:0;padding:0;counter-reset:sections}.article-aside li{counter-increment:sections;border-bottom:1px solid var(--line,#deddd5);padding:.75rem 0}.article-aside li a{display:flex;gap:.7rem;font-size:.73rem;line-height:1.6;text-decoration:none;color:var(--muted,#73736a)}.article-aside li a::before{content:counter(sections,decimal-leading-zero);font-size:.64rem;color:var(--accent,#b34d38)}.article-aside a:hover{color:var(--accent,#b34d38)}.article-context{margin:2.5rem 0 1.4rem}.article-context>p:last-child{font-size:.73rem;line-height:1.8;color:var(--muted,#73736a);margin:0}.article-source{font-size:.72rem;text-decoration:none;color:inherit}.article-end{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--line,#deddd5);max-width:760px}.article-end>span{font-size:1.8rem;color:var(--accent,#b34d38)}.article-end p{font-family:var(--font-serif,'Newsreader Variable',Georgia,serif);font-size:1.7rem;letter-spacing:-.02em;margin:.7rem 0}.article-end a{font-size:.77rem;text-decoration:none;color:var(--muted,#73736a)}.article-end a:hover{color:var(--accent,#b34d38)}@media(max-width:900px){.article-grid{grid-template-columns:1fr;gap:0}.article-aside{display:none}.article-heading{margin-top:2.25rem}.article-body{max-width:760px}.article-heading h1{font-size:clamp(3rem,8vw,4.8rem)}}@media(max-width:600px){.note-container{padding-top:2rem;padding-bottom:4rem}.article-grid{padding-top:2rem}.article-heading{margin-bottom:2.3rem}.article-deck{font-size:1rem}.article-byline{line-height:1.8}.article-body{font-size:.91rem;line-height:1.9}.article-body :global(h2){font-size:1.7rem;margin-top:2.5rem}.article-body :global(figure){padding:.6rem;margin:1.8rem 0}.article-meta{font-size:.65rem;gap:1rem}}
+</style>

@@ -1,0 +1,148 @@
+{
+  "repoagent": {
+    "src": "/images/publications/repoagent.webp",
+    "alt": "RepoAgent framework with global structure analysis, documentation generation, and documentation update.",
+    "caption": "Fig. 2 — Original RepoAgent framework.",
+    "source": "https://arxiv.org/html/2402.16667v1",
+    "assetSource": "https://arxiv.org/html/2402.16667v1/figures/Method.png",
+    "width": 1600,
+    "height": 707,
+    "kind": "figure"
+  },
+  "proactive-agent": {
+    "src": "/images/publications/proactive-agent.webp",
+    "alt": "Proactive Agent framework connecting environment events, task prediction, user feedback, and memory.",
+    "caption": "Fig. 3 — Original proactive agent framework.",
+    "source": "https://arxiv.org/html/2410.12361v3",
+    "assetSource": "https://arxiv.org/html/2410.12361v3/fig2.png",
+    "width": 851,
+    "height": 544,
+    "kind": "figure"
+  },
+  "escapebench": {
+    "src": "/images/publications/escapebench.webp",
+    "alt": "EscapeAgent design with foresight, action, and reflection modules.",
+    "caption": "Fig. 4 — Original EscapeAgent design.",
+    "source": "https://arxiv.org/html/2412.13549v2",
+    "assetSource": "https://arxiv.org/html/2412.13549v2/Figures/agent_design.png",
+    "width": 1600,
+    "height": 531,
+    "kind": "figure"
+  },
+  "long-context-bias": {
+    "src": "/images/publications/long-context-bias.webp",
+    "alt": "LongPiBench construction, positional data augmentation, and task examples.",
+    "caption": "Fig. 2 — Original LongPiBench construction and task examples.",
+    "source": "https://arxiv.org/html/2410.14641v3",
+    "assetSource": "https://arxiv.org/html/2410.14641v3/src/figs/benchmark.png",
+    "width": 1600,
+    "height": 420,
+    "kind": "figure"
+  },
+  "ui-tars-2": {
+    "src": "/images/publications/ui-tars-2.webp",
+    "alt": "UI-TARS-2 data flywheel connecting model training, annotation, and data synthesis.",
+    "caption": "Fig. 3 — Original UI-TARS-2 data flywheel.",
+    "source": "https://arxiv.org/html/2509.02544v2",
+    "assetSource": "https://arxiv.org/html/2509.02544v2/x3.png",
+    "width": 847,
+    "height": 318,
+    "kind": "figure"
+  },
+  "agent-world": {
+    "src": "/images/publications/agent-world.webp",
+    "alt": "AgentWorld pipeline for environment themes, database mining, tool verification, and task synthesis.",
+    "caption": "Fig. 2 — Original AgentWorld environment and task discovery pipeline.",
+    "source": "https://arxiv.org/html/2604.18292v1",
+    "assetSource": "https://arxiv.org/html/2604.18292v1/x2.png",
+    "width": 996,
+    "height": 332,
+    "kind": "figure"
+  },
+  "world-model-tool": {
+    "src": "/images/publications/world-model-tool.webp",
+    "alt": "World model as a tool framework, with an agent choosing real actions or simulated feedback.",
+    "caption": "Fig. 1 — Original world model as a tool framework.",
+    "source": "https://arxiv.org/html/2601.03905v2",
+    "assetSource": "https://arxiv.org/html/2601.03905v2/figures/framework_new.png",
+    "width": 1600,
+    "height": 863,
+    "kind": "figure"
+  },
+  "on-policy-distillation-ii": {
+    "src": "/images/publications/on-policy-distillation-ii-key-figure.webp",
+    "alt": "Original One-Shot OPD key result: one query recovers most full-data gains, while 16-query multi-teacher OPD matches full-data training.",
+    "caption": "Fig. 1 — One-shot distillation and multi-teacher OPD: the original headline results.",
+    "source": "https://arxiv.org/abs/2609.04172",
+    "assetSource": "https://arxiv.org/pdf/2609.04172v1",
+    "width": 1800,
+    "height": 703,
+    "kind": "figure"
+  },
+  "test-time-exploration": {
+    "src": "/images/publications/test-time-exploration.webp",
+    "alt": "TTExplore framework showing actor and thinker roles, trajectory history, and deep thoughts.",
+    "caption": "Fig. 2 — Original TTExplore actor and thinker framework.",
+    "source": "https://arxiv.org/html/2605.24828v2",
+    "assetSource": "https://arxiv.org/html/2605.24828v2/2-new.png",
+    "width": 1600,
+    "height": 568,
+    "kind": "figure"
+  },
+  "seed-1-8": {
+    "src": "/images/publications/seed-1-8-key-figure.webp",
+    "alt": "Seed1.8 evaluation framework mapping real user needs to general agentic search, tool use, coding, reasoning, writing, vision, and internal benchmarks.",
+    "caption": "Fig. 12 — Seed1.8 evaluation system: mapping real user needs to benchmark categories.",
+    "source": "https://arxiv.org/abs/2603.20633",
+    "assetSource": "https://arxiv.org/pdf/2603.20633v3",
+    "width": 1800,
+    "height": 1046,
+    "kind": "figure"
+  },
+  "xagent": {
+    "src": "/images/publications/xagent.webp",
+    "alt": "Official XAgent workflow diagram showing the planning outer loop, tool-agent inner loop, task refinement, and feedback.",
+    "caption": "Official XAgent dual-loop workflow · OpenBMB / XAgent Team",
+    "source": "https://github.com/OpenBMB/XAgent",
+    "assetSource": "https://raw.githubusercontent.com/OpenBMB/XAgent/main/assets/readme/workflow.png",
+    "width": 1600,
+    "height": 802,
+    "kind": "figure"
+  },
+  "boundary-certificate-proofs": {
+    "src": "/images/publications/boundary-certificate-proofs-key-figure.webp",
+    "alt": "Central scalar numerical-range inequality from the earlier manuscript: the norm of p(A) is at most twice its maximum modulus over W(A).",
+    "caption": "Core inequality excerpt — earlier Version 1 manuscript · Not peer-reviewed.",
+    "source": "https://www.preprints.org/manuscript/202608.1661/v1",
+    "assetSource": "https://raw.githubusercontent.com/LOGIC-10/CrouzeixConjecture/749d3a53d302455652b442a7cca11ef7681828f4/paper/crouzeix_theorem_proof.pdf",
+    "width": 1800,
+    "height": 435,
+    "kind": "figure"
+  },
+  "seed-2-0": {
+    "src": "/images/publications/seed-2-0-key-figure.webp",
+    "alt": "Original Seed2.0 comparison of solved programming problems across five ICPC contests, including model results and the full legend.",
+    "caption": "Fig. 7 — Original Seed2.0 competitive programming results across five ICPC contests.",
+    "source": "https://arxiv.org/abs/2607.00248",
+    "assetSource": "https://arxiv.org/pdf/2607.00248v1",
+    "width": 1800,
+    "height": 518,
+    "kind": "figure"
+  },
+  "seed-2-1": {
+    "src": "/images/publications/seed-2-1-workflow.webp",
+    "alt": "Original Seed2.1 Seed-for-Seed development loop with evaluation, data, research and training loops supported by AI R&D infrastructure.",
+    "caption": "Fig. 16 — Seed-for-Seed development loop: evaluation, data, research, training, and infrastructure.",
+    "width": 1800,
+    "height": 2228,
+    "kind": "figure",
+    "source": "https://seed.bytedance.com/en/seed2_1",
+    "assetSource": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/seed2.1/Seed2_1_Model_Card.pdf",
+    "thumbnail": {
+      "src": "/images/publications/seed-2-1-evaluation-data-loops.webp",
+      "width": 1800,
+      "height": 984,
+      "alt": "Evaluation and data loops from Seed2.1’s Seed-for-Seed workflow, showing task evaluation, diagnosis, data collection, and training-data refinement."
+    }
+  }
+}
