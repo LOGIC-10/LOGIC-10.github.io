@@ -22,7 +22,7 @@ import { profile } from '../../data/profile';
       </article>
     </section>
     <section class="other-explorations" aria-label="Other explorations"><span>Other explorations</span><a href="/projects/stethoscope/">Intelligent Stethoscope <span aria-hidden="true">↗</span></a></section>
-    <div class="project-contact"><p>Have a question, or an idea to explore together?</p><a href={`mailto:${profile.email}`}>Let’s talk <span aria-hidden="true">↗</span></a></div>
+    <div class="project-contact"><p>Have a question, or an idea to explore together?</p><a href={`mailto:${profile.email}`} data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">Let’s talk <span aria-hidden="true">↗</span></a></div>
   </div>
 </Layout>
 <style>

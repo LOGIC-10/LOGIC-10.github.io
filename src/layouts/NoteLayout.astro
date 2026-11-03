@@ -27,7 +27,7 @@ const headings = allHeadings.filter((heading) => heading.depth === 2);
         <a class="article-source" href="https://doi.org/10.1038/s41586-025-09422-z" target="_blank" rel="noopener noreferrer">Read the Nature paper ↗</a>
       </aside>
     </div>
-    <div class="article-end"><span aria-hidden="true">✳</span><p>Thanks for reading.</p><a href={`mailto:${profile.email}`}>Corrections or thoughts? Get in touch ↗</a></div>
+    <div class="article-end"><span aria-hidden="true">✳</span><p>Thanks for reading.</p><a href={`mailto:${profile.email}`} data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">Corrections or thoughts? Get in touch ↗</a></div>
   </div>
 </Layout>
 <style>
