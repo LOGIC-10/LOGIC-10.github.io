@@ -1,0 +1,81 @@
+---
+import { profile, socialLinks } from '../data/profile';
+---
+<dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-dialog-title" aria-describedby="contact-dialog-description">
+  <div class="contact-dialog-panel">
+    <button class="contact-dialog-close" type="button" data-close-contact aria-label="Close contact window">×</button>
+    <p class="eyebrow">GET IN TOUCH</p>
+    <h2 id="contact-dialog-title">Let’s talk.</h2>
+    <p id="contact-dialog-description">For research, collaboration, or a conversation. Email me or connect on LinkedIn and X.</p>
+    <label class="contact-email-label" for="contact-email-address">Email address</label>
+    <input id="contact-email-address" class="contact-email-address" type="text" value={profile.email} readonly spellcheck="false" data-contact-email />
+    <div class="contact-dialog-actions"><button class="button button-primary" type="button" data-copy-contact autofocus>Copy email</button><a class="button button-outline" href={`mailto:${profile.email}`}>Open email app <span aria-hidden="true">↗</span></a></div>
+    <p class="contact-copy-status" data-contact-status aria-live="polite">You can also select and copy the address above.</p>
+    <div class="contact-social-links">{socialLinks.map(link => <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}<span aria-hidden="true">↗</span></a>)}</div>
+  </div>
+</dialog>
+<script>
+  function initializeContact() {
+    const dialog = document.querySelector<HTMLDialogElement>('#contact-dialog');
+    if (!dialog || dialog.dataset.ready || !dialog.showModal) return;
+    dialog.dataset.ready = 'true';
+    const email = dialog.querySelector<HTMLInputElement>('[data-contact-email]')!;
+    const copy = dialog.querySelector<HTMLButtonElement>('[data-copy-contact]')!;
+    const status = dialog.querySelector<HTMLElement>('[data-contact-status]')!;
+    let opener: HTMLElement | null = null;
+    document.querySelectorAll<HTMLAnchorElement>('[data-contact-open]').forEach(link => link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      opener = link;
+      copy.textContent = 'Copy email';
+      status.textContent = 'You can also select and copy the address above.';
+      if (!dialog.open) dialog.showModal();
+    }));
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(email.value);
+        copy.textContent = 'Copied ✓';
+        status.textContent = 'Email address copied.';
+      } catch {
+        email.focus();
+        email.select();
+        status.textContent = 'Address selected. Press ⌘C on Mac or Ctrl+C to copy.';
+      }
+    });
+    dialog.querySelector('[data-close-contact]')!.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      const rect = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      if (opener?.getClientRects().length) opener.focus();
+      else document.querySelector<HTMLButtonElement>('.menu-button')?.focus();
+    });
+  }
+  initializeContact();
+</script>
+<style>
+  .contact-dialog { width: min(540px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 40px); padding: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--canvas); color: var(--ink); box-shadow: 0 25px 90px #27272233; overflow: auto; }
+  .contact-dialog::backdrop { background: #27272280; backdrop-filter: blur(4px); }
+  .contact-dialog-panel { position: relative; padding: 38px; }
+  .contact-dialog-close { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; color: var(--muted); font: 28px/1 var(--font-sans); }
+  .contact-dialog-close:hover { color: var(--accent); }
+  .eyebrow { margin-bottom: 18px; }
+  h2 { margin: 0 0 16px; font: 450 48px/1.05 var(--font-serif); letter-spacing: -1.3px; }
+  #contact-dialog-description { margin: 0 0 27px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+  .contact-email-label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 11px; }
+  .contact-email-address { display: block; width: 100%; min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 4px; background: white; color: var(--ink); font: 17px/1.5 var(--font-sans); }
+  .contact-dialog-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+  .contact-dialog-actions .button { flex: 1 1 170px; min-height: 46px; padding-inline: 14px; gap: 12px; }
+  .contact-copy-status { min-height: 2.8em; margin: 12px 0 20px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+  .contact-social-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; border-top: 1px solid var(--line); }
+  .contact-social-links a { display: flex; align-items: center; justify-content: space-between; min-height: 48px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+  .contact-social-links a:hover, .contact-social-links a span { color: var(--accent); }
+  :global(body:has(#contact-dialog[open])) { overflow: hidden; }
+  @media (max-width: 560px) {
+    .contact-dialog-panel { padding: 28px 22px 24px; }
+    h2 { font-size: 42px; }
+    #contact-dialog-description { font-size: 13px; }
+    .contact-email-address { font-size: 16px; }
+  }
+</style>

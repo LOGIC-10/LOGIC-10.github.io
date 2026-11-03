@@ -47,6 +47,7 @@ em { font-family: var(--font-serif); font-weight: 400; }
 .header-contact { display: flex; gap: 16px; align-items: center; padding: 11px 0 11px 22px; border-left: 1px solid var(--line); font-size: 12px; }
 .header-contact span { color: var(--accent); font-size: 19px; }
 .header-contact:hover { color: var(--accent); }
+.site-nav > .mobile-contact-link { display: none; }
 .menu-button { display: none; }
 .eyebrow, .meta-label { font: 10px/1.6 var(--font-sans); letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
 .eyebrow { margin: 0 0 24px; }
@@ -331,6 +332,7 @@ em { font-family: var(--font-serif); font-weight: 400; }
   .container { width: calc(100% - 44px); }
   html { scroll-padding-top: 95px; }
   .header-contact { display: none; }
+  .site-nav > .mobile-contact-link { display: block; }
   .header-content { min-height: 72px; }
   .has-js .site-nav { top: 72px; padding-inline: 22px; }
   .site-brand { gap: 10px; }
@@ -390,7 +392,7 @@ em { font-family: var(--font-serif); font-weight: 400; }
   .footer-email { font-size: 24px; gap: 25px; }
   .footer-bottom { display: grid; grid-template-columns: 1fr auto; gap: 18px; padding: 25px 0; }
   .footer-name { font-size: 24px; }
-  .footer-links { gap: 18px; font-size: 9px; }
+  .footer-links { grid-column: 1 / -1; gap: 18px; font-size: 9px; flex-wrap: wrap; }
   .copyright { grid-column: 1 / -1; font-size: 8px; }
   .page-heading { padding: 43px 0 32px; }
   .page-title { font-size: 57px; letter-spacing: -2.2px; line-height: 1.05; }

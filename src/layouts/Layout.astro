@@ -1,6 +1,7 @@
 ---
 import '../styles/site.css';
-import { profile } from '../data/profile';
+import { profile, socialLinks } from '../data/profile';
+import ContactDialog from '../components/ContactDialog.astro';
 interface Props {
   title: string;
   description?: string;
@@ -35,17 +36,19 @@ const navigation = [
         <a class="site-brand" href="/" aria-label="Qinyu Luo, homepage"><span class="brand-symbol" aria-hidden="true">ql</span><span class="brand-name">Qinyu Luo<span class="brand-role">{profile.affiliation.toUpperCase()}</span></span></a>
         <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
           {navigation.map(item => <a href={item.href} class:list={[{ 'is-current': active === item.key }]} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
+          <a class="mobile-contact-link" href={`mailto:${profile.email}`} data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">Let’s talk</a>
         </nav>
-        <div class="header-actions"><a class="header-contact" href={`mailto:${profile.email}`}>Let’s talk <span aria-hidden="true">↗</span></a><button type="button" class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span></button></div>
+        <div class="header-actions"><a class="header-contact" href={`mailto:${profile.email}`} data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">Let’s talk <span aria-hidden="true">↗</span></a><button type="button" class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span></button></div>
       </div>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer" id="contact">
       <div class="container">
-        <div class="footer-main"><div><p class="eyebrow">ALWAYS CURIOUS. OPEN TO CONVERSATION.</p><h2>Let’s compare <em>notes.</em></h2><p>Agents, reasoning, open source, or an idea worth exploring.</p></div><a class="footer-email" href={`mailto:${profile.email}`}>{profile.email}<span aria-hidden="true">↗</span></a></div>
-        <div class="footer-bottom"><a class="footer-name" href="/">Qinyu Luo<span>.</span></a><div class="footer-links"><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href={profile.scholar} target="_blank" rel="noopener noreferrer">Scholar ↗</a></div><span class="copyright">© {new Date().getFullYear()} Qinyu Luo</span></div>
+        <div class="footer-main"><div><p class="eyebrow">ALWAYS CURIOUS. OPEN TO CONVERSATION.</p><h2>Let’s compare <em>notes.</em></h2><p>Agents, reasoning, open source, or an idea worth exploring.</p></div><a class="footer-email" href={`mailto:${profile.email}`} data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">{profile.email}<span aria-hidden="true">↗</span></a></div>
+        <div class="footer-bottom"><a class="footer-name" href="/">Qinyu Luo<span>.</span></a><div class="footer-links">{socialLinks.map(link => <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</div><span class="copyright">© {new Date().getFullYear()} Qinyu Luo</span></div>
       </div>
     </footer>
+    <ContactDialog />
     <script>
       document.documentElement.classList.add('has-js');
       const menu = document.querySelector<HTMLButtonElement>('.menu-button');

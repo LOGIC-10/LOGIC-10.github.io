@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { profile } from '../data/profile';
+import { profile, socialLinks } from '../data/profile';
 ---
 <Layout title="About" description={`Qinyu Luo at ${profile.affiliation}: research interests, academic background, and contact information.`} active="about">
   <div class="container about-page">
@@ -11,7 +11,7 @@ import { profile } from '../data/profile';
 
     <section class="beyond-research" aria-labelledby="beyond-title"><p class="eyebrow">Beyond the paper</p><h2 id="beyond-title">Make it. Share it. Keep learning.</h2><div><p>I enjoy sharing practical experience and working through ideas in public. That has taken the form of open-source contributions, paper notes, and talks about language models and agents.</p><a href="/notes/">Read my notes & talks <span aria-hidden="true">↗</span></a></div></section>
 
-    <section class="contact-section" id="get-in-touch" aria-labelledby="contact-title"><div><p class="eyebrow">Say hello</p><h2 id="contact-title">Good work starts<br />with a conversation.</h2><p>I’m happy to connect with people thinking about agents, language models, and intelligent healthcare.</p></div><div class="contact-links"><a class="email-link" href={`mailto:${profile.email}`}>{profile.email} <span aria-hidden="true">↗</span></a><a href="https://github.com/LOGIC-10" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://scholar.google.com/citations?user=ipMWfycAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a></div></section>
+    <section class="contact-section" id="get-in-touch" aria-labelledby="contact-title"><div><p class="eyebrow">Say hello</p><h2 id="contact-title">Good work starts<br />with a conversation.</h2><p>I’m happy to connect with people thinking about agents, language models, and intelligent healthcare.</p></div><div class="contact-links"><a class="email-link" href={`mailto:${profile.email}`} data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">{profile.email} <span aria-hidden="true">↗</span></a>{socialLinks.map(link => <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div></section>
   </div>
 </Layout>
 <style>
