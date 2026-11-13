@@ -9,6 +9,12 @@ interface Props {
   className?: string;
 }
 const { title, description = `Qinyu Luo at ${profile.affiliation} — research on language model agents, reasoning, tool use, and multi-agent systems.`, active = 'home', className = '' } = Astro.props;
+const siteNameData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: profile.name,
+  url: new URL('/', Astro.site ?? Astro.url).href,
+};
 const navigation = [
   { label: 'Research', href: '/research/', key: 'research' },
   { label: 'Projects', href: '/projects/', key: 'projects' },
@@ -24,6 +30,8 @@ const navigation = [
     <meta name="description" content={description} />
     <meta name="theme-color" content="#faf9f6" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={profile.name} />
+    {Astro.url.pathname === '/' && <script type="application/ld+json" set:html={JSON.stringify(siteNameData)} />}
     <meta property="og:title" content={`${title} · Qinyu Luo`} />
     <meta property="og:description" content={description} />
     <title>{title === 'Qinyu Luo' ? `Qinyu Luo — ${profile.affiliation}` : `${title} · Qinyu Luo`}</title>
