@@ -14,7 +14,7 @@ import { profile } from '../data/profile';
         <p class="hero-description">I’m currently at <a href={profile.affiliationUrl} target="_blank" rel="noopener noreferrer">{profile.affiliation}</a>. I study language agents that reason, use tools, and work together. My interests span multi-agent systems, agentic tool learning, and multimodal reasoning—with an eye toward systems that are useful beyond the benchmark.</p>
         <div class="hero-actions"><a class="button button-primary" href="/research/">Explore my research <span aria-hidden="true">↗</span></a><a class="text-link" href={profile.scholar} target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a></div>
       </div>
-      <figure class="hero-profile"><div class="portrait-mat"><img src={profile.portrait} width="1537" height="1537" alt="Qinyu Luo by the sea" fetchpriority="high" /></div><figcaption><span>QINYU LUO</span><span>RESEARCHER. BUILDER. EXPLORER.</span></figcaption></figure>
+      <figure class="hero-profile"><div class="portrait-mat"><img src={profile.portrait.src} width={profile.portrait.width} height={profile.portrait.height} alt={profile.portrait.alt} fetchpriority="high" /></div><figcaption><span>QINYU LUO</span><span>RESEARCHER. BUILDER. EXPLORER.</span></figcaption></figure>
     </section>
     <div class="background-strip"><span>ACADEMIC BACKGROUND</span><div class="background-item">THUNLP, Tsinghua University<span>RESEARCH EXPERIENCE</span></div><div class="background-item">Johns Hopkins University<span>GRADUATE STUDIES</span></div><a href="/about/">A little more about me <span aria-hidden="true">↗</span></a></div>
 
