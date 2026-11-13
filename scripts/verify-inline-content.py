@@ -234,6 +234,11 @@ def main():
     pages = {}
     for path in sorted(dist.rglob("*.html")):
         label = path.relative_to(dist).as_posix()
+        if label == "googleb4b19883c20e9aaa.html":
+            # Search Console reads this static file to verify site ownership.
+            require(path.read_bytes() == (public / label).read_bytes(),
+                    "Search Console verification file differs from its source.")
+            continue
         try:
             pages[label] = Page(path)
         except (OSError, UnicodeError) as error:
