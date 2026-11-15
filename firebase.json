@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "qinyuluo",
+    "public": "dist",
+    "ignore": ["**/.*"]
+  }
+}

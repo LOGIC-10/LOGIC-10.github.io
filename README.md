@@ -1,6 +1,6 @@
 # Qinyu Luo 个人站
 
-这是独立的 Astro 静态新站，用于替代原来的 Jekyll 模板。生产地址为 https://logic-10.github.io/，本地预览地址为 http://127.0.0.1:4174/。
+这是独立的 Astro 静态学术主页。正式地址为 https://qinyuluo.web.app/，备用地址为 https://qinyuluo.firebaseapp.com/ 和 https://logic-10.github.io/。本地预览地址为 http://127.0.0.1:4174/。
 
 ## 本地使用
 
@@ -44,4 +44,10 @@ npm run preview
 
 ## 发布
 
-`master` 保存 Astro 源码，`gh-pages` 保存经过核验的 `dist/` 静态文件。GitHub Pages 使用 `gh-pages` 根目录，`.nojekyll` 保证完整保留 `_astro/` 资源。发布前必须完成构建及全部核验；论文全文、封面和 PDF.js 支持文件均随构建一起发布。
+`master` 保存 Astro 源码。完成 `npm run build` 和 `npm run verify` 后，使用已登录的 Firebase CLI 将 `dist/` 发布到项目 `qinyuluo`：
+
+```sh
+firebase deploy --only hosting --project qinyuluo
+```
+
+将同一份已核验的构建同步到 `gh-pages` 根目录，并保留 `.nojekyll`，以维护 GitHub Pages 备用站。构建会生成规范网址、`sitemap-index.xml` 和 `robots.txt`，统一指向正式地址。
