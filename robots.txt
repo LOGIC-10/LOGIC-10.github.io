@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://qinyuluo.web.app/sitemap-index.xml
